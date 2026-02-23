@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Bulls Youth Rugby Association | Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+         
+            
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BBYRA</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#parents">Parents ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#how-it-works">How Youth Rugby Works</a>
+                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="safeguarding.html">Safety & Safeguarding</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="clubs.html">Clubs ▾</a>
+                    <div class="dropdown-content">
+                        <a href="clubs.html">Affiliated Clubs</a>
+                        <a href="#club-resources">Club Resources</a>
+                    </div>
+                </li>
+                <li><a href="fixtures.html">Fixtures & Results</a></li>
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="about.html">About BBYRA</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact / Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="hero-rugby-kids-action.jpg" alt="Youth rugby players in action" class="hero-background" style="object-fit: cover;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Blue Bulls Youth Rugby</h1>
+            <p class="hero-subtitle">Developing youth rugby excellence across the Blue Bulls region</p>
+            <div class="cta-buttons">
+                <a href="clubs.html" class="btn btn-primary">Find a Club</a>
+                <a href="fixtures.html" class="btn btn-secondary">Fixtures & Results</a>
+                <a href="contact.html" class="btn btn-secondary">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Welcome to BBYRA</h2>
+            <p class="section-subtitle">The Blue Bulls Youth Rugby Association is responsible for the development, coordination, and governance of youth rugby across the Blue Bulls region. We serve parents, players, clubs, coaches, volunteers, and sponsors in building a thriving rugby community.</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <img src="parents-watching-rugby.jpg" alt="Parents watching their children play rugby" class="card-image" style="width: 100%; height: 260px; object-fit: cover;">
+                    <div class="card-content">
+                        <h3>For Parents</h3>
+                        <p>Everything you need to know about getting your child involved in youth rugby, from age groups to safety protocols.</p>
+                        <a href="#parents" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="rugby-club-team-photo.jpg" alt="Youth rugby club team photo" class="card-image" style="width: 100%; height: 260px; object-fit: cover;">
+                    <div class="card-content">
+                        <h3>Find Your Club</h3>
+                        <p>Browse our directory of affiliated clubs across the Blue Bulls region and find the perfect fit for your family.</p>
+                        <a href="clubs.html" class="btn btn-primary">View Clubs</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="rugby-match-scoreboard.jpg" alt="Rugby match in progress" class="card-image" style="width: 100%; height: 260px; object-fit: cover;">
+                    <div class="card-content">
+                        <h3>Latest Results</h3>
+                        <p>Stay up to date with fixtures, results, and tournament schedules across all age groups.</p>
+                        <a href="fixtures.html" class="btn btn-primary">View Fixtures</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Groups Section -->
+    <section class="section bg-light" id="age-groups">
+        <div class="container">
+            <h2 class="section-title">Player Pathway</h2>
+            <p class="section-subtitle">Our structured pathway supports players from their first steps in rugby through to competitive youth rugby</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Mini Rugby (U7-U9)</h3>
+                        <p>Fun, safe introduction to rugby with focus on basic skills, teamwork, and enjoyment.</p>
+                        <div class="badge">Ages 7-9</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Junior Rugby (U10-U13)</h3>
+                        <p>Development of core rugby skills, tactical understanding, and competitive play.</p>
+                        <div class="badge">Ages 10-13</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Youth Rugby (U14-U18)</h3>
+                        <p>Advanced competitive rugby preparing players for senior rugby and potential representative selection.</p>
+                        <div class="badge">Ages 14-18</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Safeguarding Highlight -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Your Child's Safety Comes First</h2>
+            <p class="section-subtitle">We are committed to providing a safe, supportive environment for all young players</p>
+            
+            <div class="alert">
+                <h3>🛡️ Our Safeguarding Commitment</h3>
+                <p>All coaches and volunteers undergo background screening. We maintain strict child protection policies and clear reporting procedures. <a href="safeguarding.html" style="color: #007DC5; font-weight: 600;">Learn more about our safeguarding measures →</a></p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; text-align: center;">
+                <div>
+                    <div style="font-size: 3rem; color: #007DC5;">✓</div>
+                    <h4>Background Checks</h4>
+                    <p>All coaches screened</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; color: #007DC5;">✓</div>
+                    <h4>Clear Policies</h4>
+                    <p>Comprehensive protection</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; color: #007DC5;">✓</div>
+                    <h4>Safe Reporting</h4>
+                    <p>Easy to raise concerns</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; color: #007DC5;">✓</div>
+                    <h4>Regular Training</h4>
+                    <p>Ongoing coach education</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Latest News & Events</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <img src="tournament-winners-celebration.jpg" alt="U13 tournament winners celebrating" class="card-image" style="width: 100%; height: 260px; object-fit: cover;">
+                    <div class="card-content">
+                        <div style="color: var(--text-secondary); font-size: 15px; margin-bottom: 10px;">10 February 2026</div>
+                        <h3>U13 Regional Tournament Results</h3>
+                        <p>Congratulations to all teams who participated in this weekend's regional tournament. Read the full report and see the standings...</p>
+                        <a href="news.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="coach-training-workshop.jpg" alt="Coach training workshop session" class="card-image" style="width: 100%; height: 260px; object-fit: cover;">
+                    <div class="card-content">
+                        <div style="color: var(--text-secondary); font-size: 15px; margin-bottom: 10px;">8 February 2026</div>
+                        <h3>New Coach Certification Workshops</h3>
+                        <p>BBYRA is hosting coach certification workshops this month. Open to all current and aspiring youth rugby coaches...</p>
+                        <a href="news.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="season-registration-kids.jpg" alt="Kids registering for rugby season" class="card-image" style="width: 100%; height: 260px; object-fit: cover;">
+                    <div class="card-content">
+                        <div style="color: var(--text-secondary); font-size: 15px; margin-bottom: 10px;">5 February 2026</div>
+                        <h3>2026 Season Registration Open</h3>
+                        <p>Registration for the 2026 season is now open! Contact your local club or reach out to us for more information...</p>
+                        <a href="news.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="news.html" class="btn btn-primary">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Ready to Get Started?</h2>
+            <p class="section-subtitle">Join the Blue Bulls youth rugby community today</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 40px auto;">
+                <a href="clubs.html" class="btn btn-primary" style="padding: 20px;">Find a Club Near You</a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 20px;">Volunteer or Coach</a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 20px;">Become a Sponsor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>Blue Bulls Youth Rugby Association</h4>
+                <p>Developing youth rugby excellence across the Blue Bulls region, serving parents, players, clubs, coaches, volunteers, and sponsors.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="WhatsApp">📱</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Quick Links</h4>
+                <a href="clubs.html">Find a Club</a>
+                <a href="fixtures.html">Fixtures & Results</a>
+                <a href="safeguarding.html">Safeguarding</a>
+                <a href="news.html">News & Events</a>
+                <a href="about.html">About Us</a>
+            </div>
+            
+            <div>
+                <h4>Get Involved</h4>
+                <a href="contact.html">Volunteer</a>
+                <a href="contact.html">Coach Registration</a>
+                <a href="partners.html">Become a Partner</a>
+                <a href="contact.html">Club Affiliation</a>
+            </div>
+            
+            <div>
+                <h4>Contact</h4>
+                <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3950575f56795b5b404b58175a56174358">[email&#160;protected]</a></p>
+                <p>📍 Serving the Blue Bulls Region</p>
+                <p>🕐 Mon-Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blue Bulls Youth Rugby Association. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classLis

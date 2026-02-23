@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixtures & Results | BBYRA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+         
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BBYRA</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#parents">Parents ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#how-it-works">How Youth Rugby Works</a>
+                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="safeguarding.html">Safety & Safeguarding</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="clubs.html">Clubs ▾</a>
+                    <div class="dropdown-content">
+                        <a href="clubs.html">Affiliated Clubs</a>
+                        <a href="#club-resources">Club Resources</a>
+                    </div>
+                </li>
+                <li><a href="fixtures.html">Fixtures & Results</a></li>
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="about.html">About BBYRA</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact / Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 60px; padding-bottom: 40px; background: linear-gradient(135deg, #004C97 0%, #007DC5 100%); color: white;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 15px;">Fixtures & Results</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">View upcoming matches and recent results across all age groups</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="section">
+        <div class="container">
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 40px;">
+                <h3 style="margin-bottom: 20px; color: #007DC5;">Filter Fixtures</h3>
+                <div class="fixtures-filters">
+                    <select>
+                        <option>All Age Groups</option>
+                        <option>U7</option>
+                        <option>U8</option>
+                        <option>U9</option>
+                        <option>U10</option>
+                        <option>U11</option>
+                        <option>U12</option>
+                        <option>U13</option>
+                        <option>U14</option>
+                        <option>U15</option>
+                        <option>U16</option>
+                        <option>U17</option>
+                        <option>U18</option>
+                    </select>
+                    <select>
+                        <option>All Clubs</option>
+                        <option>Pretoria Bulls RFC</option>
+                        <option>Centurion RFC</option>
+                        <option>Wonderboom RFC</option>
+                        <option>Irene RFC</option>
+                        <option>Menlo Park RFC</option>
+                        <option>Midrand RFC</option>
+                    </select>
+                    <select>
+                        <option>All Dates</option>
+                        <option>Today</option>
+                        <option>This Week</option>
+                        <option>This Month</option>
+                        <option>Past Results</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Upcoming Fixtures -->
+            <h2 style="color: #007DC5; margin-bottom: 25px; font-size: 2rem;">Upcoming Fixtures</h2>
+            
+            <div class="fixtures-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Age Group</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Home Team</th>
+                            <th>Away Team</th>
+                            <th>Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge">U13</span></td>
+                            <td>15 Feb 2026</td>
+                            <td>09:00</td>
+                            <td>Pretoria Bulls RFC</td>
+                            <td>Centurion RFC</td>
+                            <td>Loftus Versfeld Mini Fields</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U15</span></td>
+                            <td>15 Feb 2026</td>
+                            <td>10:30</td>
+                            <td>Wonderboom RFC</td>
+                            <td>Menlo Park RFC</td>
+                            <td>Wonderboom Stadium</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U11</span></td>
+                            <td>15 Feb 2026</td>
+                            <td>11:00</td>
+                            <td>Irene RFC</td>
+                            <td>Midrand RFC</td>
+                            <td>Irene Country Club</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U17</span></td>
+                            <td>16 Feb 2026</td>
+                            <td>14:00</td>
+                            <td>Centurion RFC</td>
+                            <td>Pretoria Bulls RFC</td>
+                            <td>Centurion High School</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U9</span></td>
+                            <td>16 Feb 2026</td>
+                            <td>09:30</td>
+                            <td>Menlo Park RFC</td>
+                            <td>Irene RFC</td>
+                            <td>Menlo Park Sports Grounds</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U14</span></td>
+                            <td>22 Feb 2026</td>
+                            <td>10:00</td>
+                            <td>Midrand RFC</td>
+                            <td>Wonderboom RFC</td>
+                            <td>Midrand High School</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U12</span></td>
+                            <td>22 Feb 2026</td>
+                            <td>11:30</td>
+                            <td>Pretoria Bulls RFC</td>
+                            <td>Irene RFC</td>
+                            <td>Loftus Versfeld Mini Fields</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U16</span></td>
+                            <td>23 Feb 2026</td>
+                            <td>13:00</td>
+                            <td>Centurion RFC</td>
+                            <td>Menlo Park RFC</td>
+                            <td>Centurion High School</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Recent Results -->
+            <h2 style="color: #007DC5; margin-bottom: 25px; margin-top: 60px; font-size: 2rem;">Recent Results</h2>
+            
+            <div class="fixtures-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Age Group</th>
+                            <th>Date</th>
+                            <th>Home Team</th>
+                            <th>Score</th>
+                            <th>Away Team</th>
+                            <th>Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge">U13</span></td>
+                            <td>8 Feb 2026</td>
+                            <td>Pretoria Bulls RFC</td>
+                            <td style="font-weight: 700; color: #007DC5;">24 - 17</td>
+                            <td>Wonderboom RFC</td>
+                            <td>Loftus Versfeld Mini Fields</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U15</span></td>
+                            <td>8 Feb 2026</td>
+                            <td>Centurion RFC</td>
+                            <td style="font-weight: 700; color: #007DC5;">31 - 28</td>
+                            <td>Irene RFC</td>
+                            <td>Centurion High School</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U11</span></td>
+                            <td>8 Feb 2026</td>
+                            <td>Menlo Park RFC</td>
+                            <td style="font-weight: 700; color: #007DC5;">19 - 12</td>
+                            <td>Midrand RFC</td>
+                            <td>Menlo Park Sports Grounds</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U17</span></td>
+                            <td>9 Feb 2026</td>
+                            <td>Wonderboom RFC</td>
+                            <td style="font-weight: 700; color: #007DC5;">35 - 21</td>
+                            <td>Centurion RFC</td>
+                            <td>Wonderboom Stadium</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U9</span></td>
+                            <td>9 Feb 2026</td>
+                            <td>Irene RFC</td>
+                            <td style="font-weight: 700; color: #007DC5;">14 - 14</td>
+                            <td>Pretoria Bulls RFC</td>
+                            <td>Irene Country Club</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge">U14</span></td>
+                            <td>9 Feb 2026</td>
+                            <td>Midrand RFC</td>
+                            <td style="font-weight: 700; color: #007DC5;">22 - 26</td>
+                            <td>Menlo Park RFC</td>
+                            <td>Midrand High School</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tournament Notice -->
+            <div style="background: #e3f2fd; padding: 30px; border-radius: 12px; margin-top: 50px;">
+                <h3 style="color: #007DC5; margin-bottom: 15px;">📅 Upcoming Tournament</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;"><strong>Blue Bulls Regional Youth Tournament</strong><br>
+                Date: 15-16 March 2026<br>
+                Venue: Loftus Versfeld<br>
+                Age Groups: U11, U13, U15, U17</p>
+                <a href="news.html" class="btn btn-primary">View Tournament Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>Blue Bulls Youth Rugby Association</h4>
+                <p>Developing youth rugby excellence across the Blue Bulls region, serving parents, players, clubs, coaches, volunteers, and sponsors.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="WhatsApp">📱</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Quick Links</h4>
+                <a href="clubs.html">Find a Club</a>
+                <a href="fixtures.html">Fixtures & Results</a>
+                <a href="safeguarding.html">Safeguarding</a>
+                <a href="news.html">News & Events</a>
+                <a href="about.html">About Us</a>
+            </div>
+            
+            <div>
+                <h4>Get Involved</h4>
+                <a href="contact.html">Volunteer</a>
+                <a href="contact.html">Coach Registration</a>
+                <a href="partners.html">Become a Partner</a>
+                <a href="contact.html">Club Affiliation</a>
+            </div>
+            
+            <div>
+                <h4>Contact</h4>
+                <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2dbdcd4ddf2d0d0cbc0d39cd1dd9cc8d3">[email&#160;protected]</a></p>
+                <p>📍 Serving the Blue Bulls Region</p>
+                <p>🕐 Mon-Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blue Bulls Youth Rugby Association. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle(

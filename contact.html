@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Get Involved | BBYRA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+       
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BBYRA</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#parents">Parents ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#how-it-works">How Youth Rugby Works</a>
+                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="safeguarding.html">Safety & Safeguarding</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="clubs.html">Clubs ▾</a>
+                    <div class="dropdown-content">
+                        <a href="clubs.html">Affiliated Clubs</a>
+                        <a href="#club-resources">Club Resources</a>
+                    </div>
+                </li>
+                <li><a href="fixtures.html">Fixtures & Results</a></li>
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="about.html">About BBYRA</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact / Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 60px; padding-bottom: 40px; background: linear-gradient(135deg, #004C97 0%, #007DC5 100%); color: white;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 15px;">Contact & Get Involved</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">We'd love to hear from you. Choose the option that best fits your needs.</p>
+        </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 60px;">
+                <button onclick="showForm('general')" class="btn btn-primary" style="padding: 20px; width: 100%;">General Contact</button>
+                <button onclick="showForm('club')" class="btn btn-secondary" style="padding: 20px; width: 100%;">Club Registration</button>
+                <button onclick="showForm('volunteer')" class="btn btn-secondary" style="padding: 20px; width: 100%;">Volunteer / Coach</button>
+                <button onclick="showForm('sponsor')" class="btn btn-secondary" style="padding: 20px; width: 100%;">Sponsorship</button>
+            </div>
+
+            <!-- General Contact Form -->
+            <div id="general-form" class="contact-form-container">
+                <div style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <h2 style="color: #007DC5; margin-bottom: 10px;">General Contact</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">Have a question or comment? We're here to help.</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="Your contact number">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" required placeholder="What is your enquiry about?">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea required placeholder="Tell us more about your enquiry..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy1" required>
+                            <label for="privacy1">I agree to the <a href="#" style="color: #007DC5;">Privacy Policy</a> and consent to BBYRA processing my personal information in accordance with POPIA.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Club Registration Form -->
+            <div id="club-form" class="contact-form-container" style="display: none;">
+                <div style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <h2 style="color: #007DC5; margin-bottom: 10px;">Club Affiliation Interest</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">Interested in affiliating your club with BBYRA? Let us know!</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label>Club Name *</label>
+                            <input type="text" required placeholder="Your club's name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact Person *</label>
+                            <input type="text" required placeholder="Name of main contact">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="club@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="Contact number">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Club Location / Area *</label>
+                            <input type="text" required placeholder="e.g., Pretoria North, Centurion">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Age Groups Offered</label>
+                            <select>
+                                <option>Select primary age groups</option>
+                                <option>U7 - U9</option>
+                                <option>U10 - U13</option>
+                                <option>U14 - U18</option>
+                                <option>All Age Groups</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Information</label>
+                            <textarea placeholder="Tell us about your club, facilities, number of players, etc."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy2" required>
+                            <label for="privacy2">I agree to the <a href="#" style="color: #007DC5;">Privacy Policy</a> and consent to BBYRA processing this information in accordance with POPIA.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Submit Interest</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Volunteer/Coach Form -->
+            <div id="volunteer-form" class="contact-form-container" style="display: none;">
+                <div style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <h2 style="color: #007DC5; margin-bottom: 10px;">Volunteer / Coach Interest</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">Join our team of dedicated volunteers and coaches.</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="Your contact number">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Area / Preferred Club</label>
+                            <input type="text" placeholder="Which area or club would you like to support?">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Interest *</label>
+                            <select required>
+                                <option value="">Select your area of interest</option>
+                                <option>Coaching</option>
+                                <option>Assistant Coaching</option>
+                                <option>Team Management</option>
+                                <option>Administrative Support</option>
+                                <option>Match Day Volunteering</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Experience & Qualifications</label>
+                            <textarea placeholder="Tell us about your rugby background, coaching qualifications, or relevant experience..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy3" required>
+                            <label for="privacy3">I agree to the <a href="#" style="color: #007DC5;">Privacy Policy</a> and consent to background screening as required for working with youth players.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sponsorship Form -->
+            <div id="sponsor-form" class="contact-form-container" style="display: none;">
+                <div style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <h2 style="color: #007DC5; margin-bottom: 10px;">Sponsorship Enquiry</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">Partner with BBYRA to support youth rugby development.</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label>Company / Organization Name *</label>
+                            <input type="text" required placeholder="Your company name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact Person *</label>
+                            <input type="text" required placeholder="Your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="business@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="Contact number">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Type of Sponsorship Interest</label>
+                            <select>
+                                <option>Select sponsorship type</option>
+                                <option>Association-Wide Sponsorship</option>
+                                <option>Tournament Sponsorship</option>
+                                <option>Individual Club Support</option>
+                                <option>Equipment Sponsorship</option>
+                                <option>Other / Custom Package</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Tell us about your sponsorship goals and how you'd like to support youth rugby..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy4" required>
+                            <label for="privacy4">I agree to the <a href="#" style="color: #007DC5;">Privacy Policy</a> and consent to BBYRA contacting me regarding sponsorship opportunities.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Other Ways to Reach Us</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+                <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 3rem; color: #007DC5; margin-bottom: 15px;">📧</div>
+                    <h3 style="color: #007DC5; margin-bottom: 10px;">Email</h3>
+                    <p style="color: var(--text-secondary);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a43444c456a484853584b04494504504b">[email&#160;protected]</a></p>
+                    <p style="color: #999; font-size: 0.9rem; margin-top: 10px;">We aim to respond within 48 hours</p>
+                </div>
+
+                <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 3rem; color: #007DC5; margin-bottom: 15px;">📱</div>
+                    <h3 style="color: #007DC5; margin-bottom: 10px;">WhatsApp</h3>
+                    <p style="color: var(--text-secondary);">+27 XX XXX XXXX</p>
+                    <p style="color: #999; font-size: 0.9rem; margin-top: 10px;">Quick queries and updates</p>
+                </div>
+
+                <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 3rem; color: #007DC5; margin-bottom: 15px;">🕐</div>
+                    <h3 style="color: #007DC5; margin-bottom: 10px;">Office Hours</h3>
+                    <p style="color: var(--text-secondary);">Monday - Friday</p>
+                    <p style="color: var(--text-secondary);">9:00 AM - 5:00 PM</p>
+                </div>
+
+                <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 3rem; color: #007DC5; margin-bottom: 15px;">📍</div>
+                    <h3 style="color: #007DC5; margin-bottom: 10px;">Region Served</h3>
+                    <p style="color: var(--text-secondary);">Blue Bulls Region</p>
+                    <p style="color: var(--text-secondary);">Greater Pretoria Area</p>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="color: #007DC5; margin-bottom: 25px;">Follow Us on Social Media</h3>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; background: white; border-radius: 8px; text-decoration: none; color: #007DC5; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <span style="font-size: 1.5rem;">f</span> Facebook
+                    </a>
+                    <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; background: white; border-radius: 8px; text-decoration: none; color: #007DC5; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <span style="font-size: 1.5rem;">𝕏</span> Twitter
+                    </a>
+                    <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; background: white; border-radius: 8px; text-decoration: none; color: #007DC5; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <span style="font-size: 1.5rem;">📷</span> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>Blue Bulls Youth Rugby Association</h4>
+                <p>Developing youth rugby excellence across the Blue Bulls region, serving parents, players, clubs, coaches, volunteers, and sponsors.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="WhatsApp">📱</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Quick Links</h4>
+                <a href="clubs.html">Find a Club</a>
+                <a href="fixtures.html">Fixtures & Results</a>
+                <a href="safeguarding.html">Safeguarding</a>
+                <a href="news.html">News & Events</a>
+                <a href="about.html">About Us</a>
+            </div>
+            
+            <div>
+                <h4>Get Involved</h4>
+                <a href="contact.html">Volunteer</a>
+                <a href="contact.html">Coach Registration</a>
+                <a href="partners.html">Become a Partner</a>
+                <a href="contact.html">Club Affiliation</a>
+            </div>
+            
+            <div>
+                <h4>Contact</h4>
+                <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="620b0c040d2200001b10034c010d4c1803">[email&#160;protected]</a></p>
+                <p>📍 Serving the Blue Bulls Region</p>
+                <p>🕐 Mon-Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blue Bulls Youth Rugby Association. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function showForm(formType) {
+            // Hide all forms
+            document.querySelectorAll('.contact-form-container').forEach(form => {
+                form.style.display = 'none';
+            });
+            
+            // Remove active state from all buttons
+            document.querySelectorAll('button[onclick^="showForm"]').forEach(btn => {
+                btn.className = 'btn btn-secondary';
+            });
+            
+            // Show selected form
+            document.getElementById(formType + '-form').style.display = '

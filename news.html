@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events | BBYRA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+           
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BBYRA</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#parents">Parents ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#how-it-works">How Youth Rugby Works</a>
+                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="safeguarding.html">Safety & Safeguarding</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="clubs.html">Clubs ▾</a>
+                    <div class="dropdown-content">
+                        <a href="clubs.html">Affiliated Clubs</a>
+                        <a href="#club-resources">Club Resources</a>
+                    </div>
+                </li>
+                <li><a href="fixtures.html">Fixtures & Results</a></li>
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="about.html">About BBYRA</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact / Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 60px; padding-bottom: 40px; background: linear-gradient(135deg, #004C97 0%, #007DC5 100%); color: white;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 15px;">News & Events</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Stay up to date with the latest from BBYRA and our community</p>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" style="padding-top: 40px; padding-bottom: 20px;">
+        <div class="container">
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button style="padding: 10px 25px; background: #007DC5; color: white; border: none; border-radius: 25px; cursor: pointer; font-weight: 600;">All News</button>
+                <button style="padding: 10px 25px; background: white; color: #007DC5; border: 2px solid #007DC5; border-radius: 25px; cursor: pointer; font-weight: 600;">Tournaments</button>
+                <button style="padding: 10px 25px; background: white; color: #007DC5; border: 2px solid #007DC5; border-radius: 25px; cursor: pointer; font-weight: 600;">Announcements</button>
+                <button style="padding: 10px 25px; background: white; color: #007DC5; border: 2px solid #007DC5; border-radius: 25px; cursor: pointer; font-weight: 600;">Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Articles -->
+    <section class="section">
+        <div class="container">
+            <!-- Featured Article -->
+            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 50px;">
+                <div style="background: var(--background-secondary); height: 400px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--text-secondary); font-weight: 700;">IMAGE-14</div>
+                <div style="padding: 40px;">
+                    <div style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <span class="badge">Tournament</span>
+                        <span style="color: var(--text-secondary);">10 February 2026</span>
+                    </div>
+                    <h2 style="font-size: 2.5rem; color: #007DC5; margin-bottom: 20px;">U13 Regional Tournament Delivers Thrilling Rugby</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 25px;">
+                        This weekend saw over 200 young players compete in the U13 Regional Tournament at Loftus Versfeld. 
+                        The tournament showcased exceptional talent and sportsmanship across all participating clubs. 
+                        Congratulations to Centurion RFC who emerged as champions after a nail-biting final against Pretoria Bulls RFC.
+                    </p>
+                    <div style="display: flex; gap: 15px; align-items: center;">
+                        <a href="#" style="color: #007DC5; font-weight: 600; text-decoration: none;">Read Full Story →</a>
+                        <div style="display: flex; gap: 10px;">
+                            <button style="padding: 8px 15px; background: var(--background-secondary); border: none; border-radius: 6px; cursor: pointer;">📘 Share on Facebook</button>
+                            <button style="padding: 8px 15px; background: var(--background-secondary); border: none; border-radius: 6px; cursor: pointer;">📱 Share on WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Grid -->
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image" style="background: var(--background-secondary);">IMAGE-15</div>
+                    <div class="card-content">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center;">
+                            <span class="badge">News</span>
+                            <span style="color: #999; font-size: 0.9rem;">8 February 2026</span>
+                        </div>
+                        <h3>New Coach Certification Workshops Announced</h3>
+                        <p>BBYRA is hosting comprehensive coach certification workshops throughout February and March. These workshops cover coaching techniques, safeguarding, and player development.</p>
+                        <a href="#" style="color: #007DC5; font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: var(--background-secondary);">IMAGE-16</div>
+                    <div class="card-content">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center;">
+                            <span class="badge">Announcement</span>
+                            <span style="color: #999; font-size: 0.9rem;">5 February 2026</span>
+                        </div>
+                        <h3>2026 Season Registration Now Open</h3>
+                        <p>Registration for the 2026 season is officially open! Parents can register their children through their local affiliated club. Early registration recommended.</p>
+                        <a href="#" style="color: #007DC5; font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: var(--background-secondary);">IMAGE-17</div>
+                    <div class="card-content">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center;">
+                            <span class="badge">Event</span>
+                            <span style="color: #999; font-size: 0.9rem;">2 February 2026</span>
+                        </div>
+                        <h3>Youth Rugby Development Day - March 20</h3>
+                        <p>Join us for a special development day featuring skills clinics, guest speakers, and fun activities for players of all ages. Free entry for all BBYRA members.</p>
+                        <a href="#" style="color: #007DC5; font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: var(--background-secondary);">IMAGE-18</div>
+                    <div class="card-content">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center;">
+                            <span class="badge">News</span>
+                            <span style="color: #999; font-size: 0.9rem;">28 January 2026</span>
+                        </div>
+                        <h3>Congratulations to Our Representative Players</h3>
+                        <p>Five BBYRA players have been selected for the Blue Bulls U16 squad. We're incredibly proud of their achievements and dedication to the sport.</p>
+                        <a href="#" style="color: #007DC5; font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: var(--background-secondary);">IMAGE-19</div>
+                    <div class="card-content">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center;">
+                            <span class="badge">Tournament</span>
+                            <span style="color: #999; font-size: 0.9rem;">25 January 2026</span>
+                        </div>
+                        <h3>U15 Summer Series Finals Recap</h3>
+                        <p>The U15 Summer Series concluded with spectacular finals matches. Thank you to all teams, coaches, and supporters who made it a memorable tournament.</p>
+                        <a href="#" style="color: #007DC5; font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: var(--background-secondary);">IMAGE-20</div>
+                    <div class="card-content">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center;">
+                            <span class="badge">Announcement</span>
+                            <span style="color: #999; font-size: 0.9rem;">20 January 2026</span>
+                        </div>
+                        <h3>Welcome to Our New Sponsor - TechCorp SA</h3>
+                        <p>We're thrilled to announce TechCorp SA as our newest sponsor. Their support will help us enhance facilities and programs across all age groups.</p>
+                        <a href="#" style="color: #007DC5; font-weight: 600; text-decoration: none;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 50px;">
+                <button style="padding: 10px 20px; background: var(--background-secondary); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">← Previous</button>
+                <button style="padding: 10px 20px; background: #007DC5; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">1</button>
+                <button style="padding: 10px 20px; background: var(--background-secondary); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">2</button>
+                <button style="padding: 10px 20px; background: var(--background-secondary); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">3</button>
+                <button style="padding: 10px 20px; background: var(--background-secondary); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="section bg-light">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <h2 style="color: #007DC5; margin-bottom: 15px; font-size: 2rem;">Stay in the Loop</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 30px; font-size: 1.1rem;">Subscribe to our newsletter for the latest news, fixtures, and events delivered to your inbox.</p>
+                <form style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto;">
+                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 15px; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem;">
+                    <button type="submit" class="btn btn-primary" style="padding: 15px 30px;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>Blue Bulls Youth Rugby Association</h4>
+                <p>Developing youth rugby excellence across the Blue Bulls region, serving parents, players, clubs, coaches, volunteers, and sponsors.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="WhatsApp">📱</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Quick Links</h4>
+                <a href="clubs.html">Find a Club</a>
+                <a href="fixtures.html">Fixtures & Results</a>
+                <a href="safeguarding.html">Safeguarding</a>
+                <a href="news.html">News & Events</a>
+                <a href="about.html">About Us</a>
+            </div>
+            
+            <div>
+                <h4>Get Involved</h4>
+                <a href="contact.html">Volunteer</a>
+                <a href="contact.html">Coach Registration</a>
+                <a href="partners.html">Become a Partner</a>
+                <a href="contact.html">Club Affiliation</a>
+            </div>
+            
+            <div>
+                <h4>Contact</h4>
+                <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7aea9a1a887a5a5beb5a6e9a4a8e9bda6">[email&#160;protected]</a></p>
+                <p>📍 Serving the Blue Bulls Region</p>
+                <p>🕐 Mon-Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blue Bulls Youth Rugby Association. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle(

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners & Sponsors | BBYRA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Premium Partner Showcase Styles */
+        .partners-hero {
+            background: linear-gradient(135deg, #002a5c 0%, var(--blue-bulls-dark) 50%, #002a5c 100%);
+            color: white;
+            padding: 100px 22px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partners-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(77, 168, 218, 0.1) 0%, transparent 70%);
+            animation: pulse 12s ease-in-out infinite;
+        }
+        
+        .partners-hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .partners-hero p {
+            font-size: 24px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .partner-tier {
+            margin: 80px 0;
+        }
+        
+        .tier-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--blue-bulls-dark);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .tier-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+        
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .partner-card {
+            background: var(--background-card);
+            border-radius: var(--radius-xl);
+            padding: 48px 32px;
+            text-align: center;
+            border: 1.5px solid var(--border-color);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--blue-bulls-primary), var(--blue-bulls-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-base);
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--border-hover);
+        }
+        
+        .partner-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .partner-logo {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--background-secondary) 0%, #E8F4FA 100%);
+            border-radius: var(--radius-lg);
+            margin-bottom: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            transition: all var(--transition-base);
+        }
+        
+        .partner-card:hover .partner-logo {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--blue-bulls-lighter) 0%, var(--background-secondary) 100%);
+        }
+        
+        .partner-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--blue-bulls-dark);
+            margin-bottom: 12px;
+        }
+        
+        .partner-description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .partner-level {
+            display: inline-block;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, var(--blue-bulls-dark), var(--blue-bulls-primary));
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .partnership-cta {
+            background: linear-gradient(135deg, var(--background-secondary) 0%, #E8F4FA 100%);
+            padding: 80px 22px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        .partnership-cta h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--blue-bulls-dark);
+            margin-bottom: 24px;
+        }
+        
+        .partnership-cta p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+        
+        .benefit-item {
+            background: var(--background-card);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-align: left;
+            transition: all var(--transition-base);
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        
+        .benefit-item h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--blue-bulls-dark);
+            margin-bottom: 12px;
+        }
+        
+        .benefit-item p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BBYRA</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#parents">Parents ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#how-it-works">How Youth Rugby Works</a>
+                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="safeguarding.html">Safety & Safeguarding</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="clubs.html">Clubs ▾</a>
+                    <div class="dropdown-content">
+                        <a href="clubs.html">Affiliated Clubs</a>
+                        <a href="#club-resources">Club Resources</a>
+                    </div>
+                </li>
+                <li><a href="fixtures.html">Fixtures & Results</a></li>
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="about.html">About BBYRA</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact / Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Partners Hero -->
+    <section class="partners-hero">
+        <h1>Our Partners & Sponsors</h1>
+        <p>Together, we're building the future of youth rugby in the Blue Bulls region</p>
+    </section>
+
+    <!-- Main Sponsor Section -->
+    <section class="section">
+        <div class="container">
+            <div class="partner-tier">
+                <h2 class="tier-title">Title Sponsor</h2>
+                <p class="tier-subtitle">Our main partner supporting youth rugby development</p>
+                
+                <div class="partner-grid" style="grid-template-columns: 1fr;">
+                    <div class="partner-card">
+                        <div class="partner-logo" style="height: 200px; font-size: 18px;">
+                            TITLE-SPONSOR-LOGO
+                        </div>
+                        <h3 class="partner-name">Main Title Sponsor</h3>
+                        <p class="partner-description">
+                            Our title sponsor's invaluable support enables us to provide world-class coaching, facilities, and development programs for young rugby players across the region.
+                        </p>
+                        <span class="partner-level">Title Sponsor</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platinum Partners -->
+            <div class="partner-tier">
+                <h2 class="tier-title">Platinum Partners</h2>
+                <p class="tier-subtitle">Strategic partners driving excellence in youth rugby</p>
+                
+                <div class="partner-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">PLATINUM-SPONSOR-1</div>
+                        <h3 class="partner-name">Platinum Partner 1</h3>
+                        <p class="partner-description">
+                            Supporting our coaching development programs and providing essential resources for player growth.
+                        </p>
+                        <span class="partner-level">Platinum</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">PLATINUM-SPONSOR-2</div>
+                        <h3 class="partner-name">Platinum Partner 2</h3>
+                        <p class="partner-description">
+                            Funding our regional tournaments and competitive fixtures across all age groups.
+                        </p>
+                        <span class="partner-level">Platinum</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">PLATINUM-SPONSOR-3</div>
+                        <h3 class="partner-name">Platinum Partner 3</h3>
+                        <p class="partner-description">
+                            Investing in youth development pathways and representative team programs.
+                        </p>
+                        <span class="partner-level">Platinum</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gold Partners -->
+            <div class="partner-tier">
+                <h2 class="tier-title">Gold Partners</h2>
+                <p class="tier-subtitle">Committed partners supporting our community</p>
+                
+                <div class="partner-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">GOLD-SPONSOR-1</div>
+                        <h3 class="partner-name">Gold Partner 1</h3>
+                        <p class="partner-description">Supporting equipment and kit provision for all teams.</p>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #D4AF37, #FFD700);">Gold</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">GOLD-SPONSOR-2</div>
+                        <h3 class="partner-name">Gold Partner 2</h3>
+                        <p class="partner-description">Funding safeguarding and child protection initiatives.</p>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #D4AF37, #FFD700);">Gold</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">GOLD-SPONSOR-3</div>
+                        <h3 class="partner-name">Gold Partner 3</h3>
+                        <p class="partner-description">Supporting community outreach and development programs.</p>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #D4AF37, #FFD700);">Gold</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">GOLD-SPONSOR-4</div>
+                        <h3 class="partner-name">Gold Partner 4</h3>
+                        <p class="partner-description">Investing in facilities and infrastructure improvements.</p>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #D4AF37, #FFD700);">Gold</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Partners -->
+            <div class="partner-tier">
+                <h2 class="tier-title">Community Partners</h2>
+                <p class="tier-subtitle">Local businesses supporting grassroots rugby</p>
+                
+                <div class="partner-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo" style="height: 120px;">COMMUNITY-SPONSOR-1</div>
+                        <h3 class="partner-name">Community Partner 1</h3>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #4DA8DA, #A3D5F0);">Community</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo" style="height: 120px;">COMMUNITY-SPONSOR-2</div>
+                        <h3 class="partner-name">Community Partner 2</h3>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #4DA8DA, #A3D5F0);">Community</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo" style="height: 120px;">COMMUNITY-SPONSOR-3</div>
+                        <h3 class="partner-name">Community Partner 3</h3>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #4DA8DA, #A3D5F0);">Community</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo" style="height: 120px;">COMMUNITY-SPONSOR-4</div>
+                        <h3 class="partner-name">Community Partner 4</h3>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #4DA8DA, #A3D5F0);">Community</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo" style="height: 120px;">COMMUNITY-SPONSOR-5</div>
+                        <h3 class="partner-name">Community Partner 5</h3>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #4DA8DA, #A3D5F0);">Community</span>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo" style="height: 120px;">COMMUNITY-SPONSOR-6</div>
+                        <h3 class="partner-name">Community Partner 6</h3>
+                        <span class="partner-level" style="background: linear-gradient(135deg, #4DA8DA, #A3D5F0);">Community</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership CTA -->
+    <section class="partnership-cta">
+        <div class="container">
+            <h2>Become a Partner</h2>
+            <p>Join us in shaping the future of youth rugby. Your partnership makes a real difference in the lives of young athletes across the Blue Bulls region.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Brand Visibility</h4>
+                    <p>Reach thousands of families and community members through our events and digital platforms.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <h4>Community Impact</h4>
+                    <p>Make a tangible difference in youth development and community building through sport.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <h4>Association with Excellence</h4>
+                    <p>Align your brand with the prestigious Blue Bulls rugby legacy and values.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <h4>CSR Opportunities</h4>
+                    <p>Fulfill corporate social responsibility goals while supporting youth sport development.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 48px;">
+                <a href="contact.html" class="btn btn-primary" style="font-size: 18px; padding: 16px 40px;">Explore Partnership Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>Blue Bulls Youth Rugby Association</h4>
+                <p>Developing youth rugby excellence across the Blue Bulls region, serving parents, players, clubs, coaches, volunteers, and sponsors.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="WhatsApp">📱</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Quick Links</h4>
+                <a href="clubs.html">Find a Club</a>
+                <a href="fixtures.html">Fixtures & Results</a>
+                <a href="safeguarding.html">Safeguarding</a>
+                <a href="news.html">News & Events</a>
+                <a href="about.html">About Us</a>
+            </div>
+            
+            <div>
+                <h4>Get Involved</h4>
+                <a href="contact.html">Volunteer</a>
+                <a href="contact.html">Coach Registration</a>
+                <a href="donate.html">Make a Donation</a>
+                <a href="partners.html">Become a Partner</a>
+                <a href="contact.html">Club Affiliation</a>
+            </div>
+            
+            <div>
+                <h4>Contact</h4>
+                <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4dddad2dbf4d6d6cdc6d59ad7db9aced5">[email&#160;protected]</a></p>
+                <p>📍 Serving the Blue Bulls Region</p>
+                <p>🕐 Mon-Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blue Bulls Youth Rugby Association. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle(
