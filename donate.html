@@ -3,404 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Our Mission - Donate | BBYRA</title>
+    <title>Donate | BBYRA</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Premium Donation Page Styles */
-        .donation-hero {
-            background: linear-gradient(135deg, var(--blue-bulls-dark) 0%, #001f4d 50%, var(--blue-bulls-primary) 100%);
-            color: white;
-            padding: 120px 22px 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .donation-hero::before,
-        .donation-hero::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(77, 168, 218, 0.15) 0%, transparent 70%);
-            animation: pulse 15s ease-in-out infinite;
-        }
-        
-        .donation-hero::before {
-            top: -30%;
-            right: -15%;
-            width: 800px;
-            height: 800px;
-        }
-        
-        .donation-hero::after {
-            bottom: -30%;
-            left: -15%;
-            width: 600px;
-            height: 600px;
-            animation-delay: -7s;
-        }
-        
-        .donation-hero h1 {
-            font-size: 72px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            position: relative;
-            z-index: 2;
-            line-height: 1.1;
-        }
-        
-        .donation-hero p {
-            font-size: 26px;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto 32px;
-            position: relative;
-            z-index: 2;
-            line-height: 1.4;
-        }
-        
-        .impact-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            max-width: 1000px;
-            margin: 60px auto 0;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 24px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all var(--transition-base);
-        }
-        
-        .stat-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #ffffff, #a3d5f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .stat-label {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-        
-        /* Donation Amount Selector */
-        .donation-section {
-            background: var(--background-card);
-            border-radius: var(--radius-xl);
-            padding: 48px;
-            margin: 40px 0;
-            border: 1.5px solid var(--border-color);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .donation-section h2 {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--blue-bulls-dark);
-            margin-bottom: 16px;
-            text-align: center;
-        }
-        
-        .donation-section p {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-        
-        .donation-amounts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-        
-        .amount-option {
-            position: relative;
-        }
-        
-        .amount-option input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .amount-label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 24px 16px;
-            background: var(--background-secondary);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-            transition: all var(--transition-base);
-            min-height: 100px;
-        }
-        
-        .amount-option input[type="radio"]:checked + .amount-label {
-            background: linear-gradient(135deg, var(--blue-bulls-dark), var(--blue-bulls-primary));
-            color: white;
-            border-color: var(--blue-bulls-dark);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 61, 130, 0.3);
-        }
-        
-        .amount-value {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-        
-        .amount-impact {
-            font-size: 13px;
-            opacity: 0.8;
-            text-align: center;
-        }
-        
-        .custom-amount {
-            margin: 32px 0;
-        }
-        
-        .custom-amount input {
-            width: 100%;
-            padding: 18px 24px;
-            font-size: 24px;
-            font-weight: 700;
-            text-align: center;
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            background: var(--background-card);
-            transition: all var(--transition-base);
-        }
-        
-        .custom-amount input:focus {
-            border-color: var(--blue-bulls-primary);
-            box-shadow: 0 0 0 4px rgba(0, 125, 197, 0.15);
-            outline: none;
-        }
-        
-        .donation-frequency {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-bottom: 32px;
-        }
-        
-        .frequency-btn {
-            flex: 1;
-            max-width: 200px;
-            padding: 16px 24px;
-            background: var(--background-secondary);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-base);
-        }
-        
-        .frequency-btn.active {
-            background: linear-gradient(135deg, var(--blue-bulls-dark), var(--blue-bulls-primary));
-            color: white;
-            border-color: var(--blue-bulls-dark);
-        }
-        
-        .frequency-btn:hover:not(.active) {
-            border-color: var(--blue-bulls-primary);
-            transform: translateY(-2px);
-        }
-        
-        /* Impact Tiers */
-        .impact-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
-            margin: 60px 0;
-        }
-        
-        .tier-card {
-            background: var(--background-card);
-            border-radius: var(--radius-xl);
-            padding: 40px 32px;
-            border: 1.5px solid var(--border-color);
-            transition: all var(--transition-base);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tier-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--blue-bulls-primary), var(--blue-bulls-light));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--transition-base);
-        }
-        
-        .tier-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--border-hover);
-        }
-        
-        .tier-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .tier-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .tier-amount {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--blue-bulls-dark);
-            margin-bottom: 12px;
-        }
-        
-        .tier-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--blue-bulls-primary);
-            margin-bottom: 16px;
-        }
-        
-        .tier-benefits {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .tier-benefits li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        .tier-benefits li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--blue-bulls-primary);
-            font-weight: 700;
-            font-size: 18px;
-        }
-        
-        /* Recognition Wall */
-        .recognition-wall {
-            background: linear-gradient(135deg, var(--background-secondary) 0%, #E8F4FA 100%);
-            padding: 80px 22px;
-            margin-top: 80px;
-        }
-        
-        .donor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .donor-card {
-            background: var(--background-card);
-            padding: 24px;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-base);
-        }
-        
-        .donor-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .donor-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--blue-bulls-dark);
-            margin-bottom: 4px;
-        }
-        
-        .donor-level {
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        
-        .donate-cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px 48px;
-            font-size: 20px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--blue-bulls-dark), var(--blue-bulls-primary));
-            color: white;
-            border: none;
-            border-radius: 980px;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            box-shadow: 0 8px 24px rgba(0, 61, 130, 0.3);
-            text-decoration: none;
-        }
-        
-        .donate-cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 61, 130, 0.4);
-        }
-        
-        .secure-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 24px;
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-        
-        .secure-badge::before {
-            content: '🔒';
-            font-size: 18px;
-        }
-    </style>
 </head>
 <body>
-    <!-- Page Loader -->
+
     <div class="page-loader">
-        <div class="loader-content">
-            
-            <div class="loader-spinner"></div>
-        </div>
+        <div class="loader-content"><div class="loader-spinner"></div></div>
     </div>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">BBYRA</a>
@@ -420,7 +31,7 @@
                     <a href="clubs.html">Clubs ▾</a>
                     <div class="dropdown-content">
                         <a href="clubs.html">Affiliated Clubs</a>
-                        <a href="#club-resources">Club Resources</a>
+                        <a href="clubs.html">Club Resources</a>
                     </div>
                 </li>
                 <li><a href="fixtures.html">Fixtures & Results</a></li>
@@ -433,153 +44,149 @@
         </div>
     </nav>
 
-    <!-- Donation Hero -->
-    <section class="donation-hero">
-        <h1>Support Youth Rugby</h1>
-        <p>Your donation helps us develop the next generation of rugby players and build character through sport</p>
-        
-        <div class="impact-stats">
-            <div class="stat-item">
-                <div class="stat-number">2,400+</div>
-                <div class="stat-label">Young Players</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">45</div>
-                <div class="stat-label">Affiliated Clubs</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">200+</div>
-                <div class="stat-label">Trained Coaches</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Goes to Youth Development</div>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Support Youth Rugby</h1>
+            <p>Your donation helps develop the next generation of players and build character through sport</p>
+
+            <div class="impact-stats" style="margin-top: 48px; max-width: 900px;">
+                <div style="text-align: center; padding: 24px; background: rgba(255,255,255,.1); border-radius: var(--r-lg); border: 1px solid rgba(255,255,255,.2);">
+                    <span class="stat-number" style="color: #fff; font-size: clamp(36px, 5vw, 56px);" data-target="2400" data-suffix="+">2400+</span>
+                    <span class="stat-label" style="color: rgba(255,255,255,.8);">Young Players</span>
+                </div>
+                <div style="text-align: center; padding: 24px; background: rgba(255,255,255,.1); border-radius: var(--r-lg); border: 1px solid rgba(255,255,255,.2);">
+                    <span class="stat-number" style="color: #fff; font-size: clamp(36px, 5vw, 56px);" data-target="20" data-suffix="+">20+</span>
+                    <span class="stat-label" style="color: rgba(255,255,255,.8);">Affiliated Clubs</span>
+                </div>
+                <div style="text-align: center; padding: 24px; background: rgba(255,255,255,.1); border-radius: var(--r-lg); border: 1px solid rgba(255,255,255,.2);">
+                    <span class="stat-number" style="color: #fff; font-size: clamp(36px, 5vw, 56px);" data-target="150" data-suffix="+">150+</span>
+                    <span class="stat-label" style="color: rgba(255,255,255,.8);">Trained Coaches</span>
+                </div>
+                <div style="text-align: center; padding: 24px; background: rgba(255,255,255,.1); border-radius: var(--r-lg); border: 1px solid rgba(255,255,255,.2);">
+                    <span class="stat-number" style="color: #fff; font-size: clamp(36px, 5vw, 56px);">100%</span>
+                    <span class="stat-label" style="color: rgba(255,255,255,.8);">To Youth Development</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Donation Section -->
+    <!-- Donation Form -->
     <section class="section">
-        <div class="container" style="max-width: 900px;">
-            <div class="donation-section">
-                <h2>Make Your Donation</h2>
-                <p>Choose an amount that works for you. Every contribution makes a difference.</p>
-                
-                <div class="donation-frequency">
-                    <button class="frequency-btn active" onclick="setFrequency('once')">One-Time</button>
-                    <button class="frequency-btn" onclick="setFrequency('monthly')">Monthly</button>
+        <div class="container" style="max-width: 820px;">
+            <div style="background: var(--bg-card); border-radius: var(--r-xl); padding: 48px; border: 1px solid var(--br-c); box-shadow: var(--sh-lg);">
+                <h2 style="font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; text-transform: uppercase; color: var(--bb-dark); text-align: center; margin-bottom: 8px;">Make Your Donation</h2>
+                <p style="text-align: center; color: var(--txt-2); font-size: 16px; margin-bottom: 36px;">Choose an amount that works for you. Every contribution makes a difference.</p>
+
+                <!-- Frequency -->
+                <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;">
+                    <button class="freq-btn active" id="freqOnce" onclick="setFrequency('once', this)" style="flex: 1; max-width: 200px; min-width: 120px; padding: 14px 24px; background: linear-gradient(135deg, var(--bb-navy), var(--bb-blue)); color: white; border: 2px solid transparent; border-radius: 100px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: inherit;">One-Time</button>
+                    <button class="freq-btn" id="freqMonthly" onclick="setFrequency('monthly', this)" style="flex: 1; max-width: 200px; min-width: 120px; padding: 14px 24px; background: var(--bg-alt); color: var(--bb-dark); border: 2px solid var(--br-c); border-radius: 100px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: inherit;">Monthly</button>
                 </div>
-                
-                <div class="donation-amounts">
-                    <div class="amount-option">
-                        <input type="radio" name="amount" id="amount100" value="100">
-                        <label for="amount100" class="amount-label">
-                            <span class="amount-value">R100</span>
-                            <span class="amount-impact">Training equipment</span>
-                        </label>
-                    </div>
-                    
-                    <div class="amount-option">
-                        <input type="radio" name="amount" id="amount250" value="250" checked>
-                        <label for="amount250" class="amount-label">
-                            <span class="amount-value">R250</span>
-                            <span class="amount-impact">Player kit</span>
-                        </label>
-                    </div>
-                    
-                    <div class="amount-option">
-                        <input type="radio" name="amount" id="amount500" value="500">
-                        <label for="amount500" class="amount-label">
-                            <span class="amount-value">R500</span>
-                            <span class="amount-impact">Coach training</span>
-                        </label>
-                    </div>
-                    
-                    <div class="amount-option">
-                        <input type="radio" name="amount" id="amount1000" value="1000">
-                        <label for="amount1000" class="amount-label">
-                            <span class="amount-value">R1,000</span>
-                            <span class="amount-impact">Team sponsor</span>
-                        </label>
-                    </div>
-                    
-                    <div class="amount-option">
-                        <input type="radio" name="amount" id="amount2500" value="2500">
-                        <label for="amount2500" class="amount-label">
-                            <span class="amount-value">R2,500</span>
-                            <span class="amount-impact">Tournament entry</span>
-                        </label>
-                    </div>
-                    
-                    <div class="amount-option">
-                        <input type="radio" name="amount" id="custom" value="custom">
-                        <label for="custom" class="amount-label">
-                            <span class="amount-value">Custom</span>
-                            <span class="amount-impact">Your choice</span>
-                        </label>
-                    </div>
+
+                <!-- Amount grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 28px;">
+                    <label class="donate-amount-card selected" data-value="100">
+                        <input type="radio" name="donateAmount" value="100" style="display:none;">
+                        <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; display: block; margin-bottom: 4px;">R100</span>
+                        <span style="font-size: 12px; opacity: .8;">Training equipment</span>
+                    </label>
+                    <label class="donate-amount-card" data-value="250">
+                        <input type="radio" name="donateAmount" value="250" style="display:none;">
+                        <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; display: block; margin-bottom: 4px;">R250</span>
+                        <span style="font-size: 12px; opacity: .8;">Player kit</span>
+                    </label>
+                    <label class="donate-amount-card" data-value="500">
+                        <input type="radio" name="donateAmount" value="500" style="display:none;">
+                        <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; display: block; margin-bottom: 4px;">R500</span>
+                        <span style="font-size: 12px; opacity: .8;">Coach training</span>
+                    </label>
+                    <label class="donate-amount-card" data-value="1000">
+                        <input type="radio" name="donateAmount" value="1000" style="display:none;">
+                        <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; display: block; margin-bottom: 4px;">R1,000</span>
+                        <span style="font-size: 12px; opacity: .8;">Team sponsor</span>
+                    </label>
+                    <label class="donate-amount-card" data-value="2500">
+                        <input type="radio" name="donateAmount" value="2500" style="display:none;">
+                        <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; display: block; margin-bottom: 4px;">R2,500</span>
+                        <span style="font-size: 12px; opacity: .8;">Tournament entry</span>
+                    </label>
+                    <label class="donate-amount-card" data-value="custom" id="customCard">
+                        <input type="radio" name="donateAmount" value="custom" style="display:none;">
+                        <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; display: block; margin-bottom: 4px;">Other</span>
+                        <span style="font-size: 12px; opacity: .8;">Your choice</span>
+                    </label>
                 </div>
-                
-                <div class="custom-amount">
-                    <input type="number" placeholder="Enter custom amount (R)" min="50" step="10" id="customAmount">
+
+                <!-- Custom amount input -->
+                <div id="customAmountWrapper" style="display: none; margin-bottom: 28px;">
+                    <input type="number" id="customAmountInput" placeholder="Enter your amount (R)" min="50" step="10"
+                        style="width:100%; padding: 16px 20px; font-size: 22px; font-weight: 700; text-align: center; border: 2px solid var(--br-c); border-radius: var(--r-md); background: var(--bg-card); font-family: 'Barlow Condensed', sans-serif; color: var(--bb-dark); transition: border-color 0.2s ease;">
                 </div>
-                
+
                 <div style="text-align: center;">
-                    <button class="donate-cta-button" onclick="processDonation()">
+                    <button class="btn btn-primary" id="donateBtn" onclick="processDonation()" style="font-size: 18px; padding: 18px 52px; width: 100%; max-width: 400px;">
                         Donate Now
                     </button>
-                    <div class="secure-badge">
-                        Secure payment processing via bank transfer
-                    </div>
+                    <p style="margin-top: 16px; font-size: 13px; color: var(--txt-3);">🔒 Secure payment — contact us at info@bbyra.co.za to complete your donation</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Impact Tiers -->
-    <section class="section" style="background: var(--background-solid); padding-top: 60px;">
+    <section class="section bg-light">
         <div class="container">
             <h2 class="section-title">Your Impact</h2>
-            <p class="section-subtitle">See how your donation supports youth rugby development</p>
-            
-            <div class="impact-tiers">
-                <div class="tier-card">
-                    <div class="tier-icon">🏉</div>
-                    <div class="tier-amount">R100</div>
-                    <div class="tier-title">Supporter</div>
-                    <ul class="tier-benefits">
-                        <li>Training cones and markers</li>
-                        <li>Practice bibs for teams</li>
-                        <li>First aid supplies</li>
-                        <li>Newsletter updates</li>
-                    </ul>
+            <p class="section-subtitle">See exactly how your donation supports youth rugby development</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 40px;">
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="padding: 36px 28px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">🏉</div>
+                        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 900; color: var(--bb-blue); line-height: 1; margin-bottom: 8px;">R100</div>
+                        <h3 style="margin-bottom: 20px;">Supporter</h3>
+                        <ul style="list-style: none; color: var(--txt-2); font-size: 15px;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Training cones and markers</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Practice bibs for teams</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> First aid supplies</li>
+                            <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Newsletter updates</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="tier-card">
-                    <div class="tier-icon">🎽</div>
-                    <div class="tier-amount">R500</div>
-                    <div class="tier-title">Champion</div>
-                    <ul class="tier-benefits">
-                        <li>Full player kit package</li>
-                        <li>Coach training materials</li>
-                        <li>Match day equipment</li>
-                        <li>Recognition on website</li>
-                        <li>Quarterly impact reports</li>
-                    </ul>
+
+                <div class="card scroll-reveal" style="border-color: var(--bb-blue); box-shadow: var(--sh-md);">
+                    <div style="background: linear-gradient(135deg, var(--bb-navy), var(--bb-blue)); padding: 12px; text-align: center;">
+                        <span style="color: white; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Most Popular</span>
+                    </div>
+                    <div class="card-content" style="padding: 36px 28px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">🎽</div>
+                        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 900; color: var(--bb-blue); line-height: 1; margin-bottom: 8px;">R500</div>
+                        <h3 style="margin-bottom: 20px;">Champion</h3>
+                        <ul style="list-style: none; color: var(--txt-2); font-size: 15px;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Full player kit package</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Coach training materials</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Match day equipment</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Recognition on website</li>
+                            <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Quarterly impact reports</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="tier-card">
-                    <div class="tier-icon">🏆</div>
-                    <div class="tier-amount">R1,000+</div>
-                    <div class="tier-title">Patron</div>
-                    <ul class="tier-benefits">
-                        <li>Sponsor entire team for season</li>
-                        <li>Tournament entry fees</li>
-                        <li>Advanced coaching courses</li>
-                        <li>Prominent website recognition</li>
-                        <li>Exclusive donor events</li>
-                        <li>Personal impact stories</li>
-                    </ul>
+
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="padding: 36px 28px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">🏆</div>
+                        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 900; color: var(--bb-blue); line-height: 1; margin-bottom: 8px;">R1,000+</div>
+                        <h3 style="margin-bottom: 20px;">Patron</h3>
+                        <ul style="list-style: none; color: var(--txt-2); font-size: 15px;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Sponsor entire team</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Tournament entry fees</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Advanced coaching courses</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Prominent website recognition</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--br-c); display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Exclusive donor events</li>
+                            <li style="padding: 8px 0; display: flex; gap: 10px;"><span style="color: var(--bb-blue); font-weight: 700;">✓</span> Personal impact stories</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -589,89 +196,78 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Other Ways to Support</h2>
-            <p class="section-subtitle">There are many ways to make a difference</p>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-content">
-                        <h3>🤝 Volunteer Your Time</h3>
+            <p class="section-subtitle">There are many ways to make a difference beyond financial donations</p>
+
+            <div class="card-grid" style="margin-top: 40px;">
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="text-align: center; padding: 40px 28px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">🤝</div>
+                        <h3>Volunteer Your Time</h3>
                         <p>Join our coaching team, help with match days, or support administrative tasks. Your time is invaluable.</p>
-                        <a href="contact.html" class="btn btn-primary">Learn More</a>
+                        <a href="contact.html" class="btn btn-outline">Learn More</a>
                     </div>
                 </div>
-                
-                <div class="card">
-                    <div class="card-content">
-                        <h3>🎁 Equipment Donation</h3>
-                        <p>Donate rugby equipment, training gear, or sports supplies to help clubs in need.</p>
-                        <a href="contact.html" class="btn btn-primary">Donate Equipment</a>
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="text-align: center; padding: 40px 28px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">🎁</div>
+                        <h3>Equipment Donation</h3>
+                        <p>Donate rugby equipment, training gear, or sports supplies to help clubs in need across the region.</p>
+                        <a href="contact.html" class="btn btn-outline">Donate Equipment</a>
                     </div>
                 </div>
-                
-                <div class="card">
-                    <div class="card-content">
-                        <h3>💼 Corporate Partnership</h3>
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="text-align: center; padding: 40px 28px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">💼</div>
+                        <h3>Corporate Partnership</h3>
                         <p>Partner with us for long-term impact through corporate social responsibility programs.</p>
-                        <a href="partners.html" class="btn btn-primary">Explore Partnerships</a>
+                        <a href="partners.html" class="btn btn-outline">Explore Partnerships</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Donor Recognition Wall -->
-    <section class="recognition-wall">
+    <!-- Donor Wall -->
+    <section class="section bg-light">
         <div class="container">
-            <h2 style="text-align: center; font-size: 42px; font-weight: 800; color: var(--blue-bulls-dark); margin-bottom: 16px;">Our Donors</h2>
-            <p style="text-align: center; font-size: 18px; color: var(--text-secondary); margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">Thank you to our generous supporters who make youth rugby possible</p>
-            
-            <div class="donor-grid">
-                <div class="donor-card">
-                    <div class="donor-name">Anonymous Donor</div>
-                    <div class="donor-level">Patron - R5,000</div>
+            <h2 class="section-title">Our Donors</h2>
+            <p class="section-subtitle">Thank you to our generous supporters who make youth rugby possible</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">Anonymous Donor</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Patron · R5,000</p>
                 </div>
-                
-                <div class="donor-card">
-                    <div class="donor-name">Smith Family</div>
-                    <div class="donor-level">Champion - R1,200</div>
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c);">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">Smith Family</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Champion · R1,200</p>
                 </div>
-                
-                <div class="donor-card">
-                    <div class="donor-name">J. van der Merwe</div>
-                    <div class="donor-level">Champion - R1,000</div>
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c);">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">J. van der Merwe</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Champion · R1,000</p>
                 </div>
-                
-                <div class="donor-card">
-                    <div class="donor-name">Anonymous</div>
-                    <div class="donor-level">Champion - R800</div>
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c);">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">Anonymous</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Champion · R800</p>
                 </div>
-                
-                <div class="donor-card">
-                    <div class="donor-name">P. Botha</div>
-                    <div class="donor-level">Supporter - R500</div>
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c);">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">P. Botha</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Supporter · R500</p>
                 </div>
-                
-                <div class="donor-card">
-                    <div class="donor-name">M. Naidoo</div>
-                    <div class="donor-level">Supporter - R500</div>
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c);">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">M. Naidoo</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Supporter · R500</p>
                 </div>
-                
-                <div class="donor-card">
-                    <div class="donor-name">De Wet Family</div>
-                    <div class="donor-level">Supporter - R300</div>
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c);">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">De Wet Family</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Supporter · R300</p>
                 </div>
-                
-                <div class="donor-card">
-                    <div class="donor-name">Anonymous</div>
-                    <div class="donor-level">Supporter - R250</div>
+                <div class="scroll-reveal" style="background: var(--bg-card); padding: 24px; border-radius: var(--r-lg); text-align: center; border: 1px solid var(--br-c);">
+                    <p style="font-weight: 700; color: var(--bb-dark); margin-bottom: 4px;">Anonymous</p>
+                    <p style="font-size: 13px; color: var(--txt-3);">Supporter · R250</p>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 48px;">
-                <p style="color: var(--text-secondary); font-size: 16px; font-style: italic;">
-                    Join our community of supporters making a difference in youth rugby
-                </p>
-            </div>
+            <p style="text-align: center; margin-top: 32px; font-size: 15px; color: var(--txt-3); font-style: italic;">Join our community of supporters making a difference in youth rugby</p>
         </div>
     </section>
 
@@ -688,7 +284,6 @@
                     <a href="#" title="WhatsApp">📱</a>
                 </div>
             </div>
-            
             <div>
                 <h4>Quick Links</h4>
                 <a href="clubs.html">Find a Club</a>
@@ -697,7 +292,6 @@
                 <a href="news.html">News & Events</a>
                 <a href="about.html">About Us</a>
             </div>
-            
             <div>
                 <h4>Get Involved</h4>
                 <a href="contact.html">Volunteer</a>
@@ -706,49 +300,99 @@
                 <a href="partners.html">Become a Partner</a>
                 <a href="contact.html">Club Affiliation</a>
             </div>
-            
             <div>
                 <h4>Contact</h4>
-                <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82ebece4edc2e0e0fbf0e3ace1edacf8e3">[email&#160;protected]</a></p>
+                <p>📧 info@bbyra.co.za</p>
                 <p>📍 Serving the Blue Bulls Region</p>
-                <p>🕐 Mon-Fri: 9:00 AM - 5:00 PM</p>
+                <p>🕐 Mon–Fri: 9:00 AM – 5:00 PM</p>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2026 Blue Bulls Youth Rugby Association. All rights reserved.</p>
-            <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
+            <p><a href="#">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#">Terms of Use</a></p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-
-    <!-- Premium JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script>
-        function setFrequency(type) {
-            document.querySelectorAll('.frequency-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-        
-        function processDonation() {
-            const selectedAmount = document.querySelector('input[name="amount"]:checked');
-            const customAmount = document.getElementById('customAmount');
-            
-            let amount = selectedAmount ? selectedAmount.value : '250';
-            if (amount === 'custom' && customAmount.value) {
-                amount = customAmount.value;
-            }
-            
-            // Show success message (in production, this would process payment)
-            alert(`Thank you for your generous donation of R${amount}!\n\nYou will be redirected to our secure payment page.\n\nFor now, please contact us at info@bbyra.co.za to complete your donation.`);
-        }
-        
-        // Enable custom amount when selected
-        docume
     <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
     <script src="script.js"></script>
+    <script>
+        // Donation amount card selection
+        document.querySelectorAll('.donate-amount-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.donate-amount-card').forEach(function(c) {
+                    c.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                var customWrapper = document.getElementById('customAmountWrapper');
+                if (this.dataset.value === 'custom') {
+                    customWrapper.style.display = 'block';
+                    document.getElementById('customAmountInput').focus();
+                } else {
+                    customWrapper.style.display = 'none';
+                }
+            });
+        });
+
+        function setFrequency(type, btn) {
+            document.querySelectorAll('.freq-btn').forEach(function(b) {
+                b.style.background = 'var(--bg-alt)';
+                b.style.color = 'var(--bb-dark)';
+                b.style.borderColor = 'var(--br-c)';
+            });
+            btn.style.background = 'linear-gradient(135deg, var(--bb-navy), var(--bb-blue))';
+            btn.style.color = 'white';
+            btn.style.borderColor = 'transparent';
+        }
+
+        function processDonation() {
+            var selected = document.querySelector('.donate-amount-card.selected');
+            var amount = selected ? selected.dataset.value : '100';
+            if (amount === 'custom') {
+                var custom = document.getElementById('customAmountInput').value;
+                amount = custom ? custom : '0';
+                if (parseInt(amount) < 50) {
+                    alert('Please enter a minimum donation of R50.');
+                    return;
+                }
+            }
+            var btn = document.getElementById('donateBtn');
+            btn.textContent = 'Processing...';
+            btn.disabled = true;
+            setTimeout(function() {
+                btn.textContent = 'Donate Now';
+                btn.disabled = false;
+                var msg = document.createElement('div');
+                msg.style.cssText = 'background:rgba(0,125,197,.1);border:1px solid var(--bb-blue);border-radius:14px;padding:20px 24px;margin-top:20px;color:var(--bb-dark);font-weight:600;text-align:center;font-size:16px;';
+                msg.innerHTML = '✅ Thank you for your generous donation of <strong>R' + amount + '</strong>!<br><span style="font-weight:400;font-size:14px;color:var(--txt-2);">Please contact us at <a href="mailto:info@bbyra.co.za" style="color:var(--bb-blue);">info@bbyra.co.za</a> to complete your donation.</span>';
+                btn.parentNode.appendChild(msg);
+                setTimeout(function() {
+                    msg.style.transition = 'opacity 0.4s';
+                    msg.style.opacity = '0';
+                    setTimeout(function() { msg.remove(); }, 400);
+                }, 8000);
+            }, 1000);
+        }
+    </script>
+    <style>
+        .donate-amount-card {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 22px 14px; min-height: 90px;
+            background: var(--bg-alt); border: 2px solid var(--br-c);
+            border-radius: var(--r-md); cursor: pointer;
+            transition: all 0.2s ease; text-align: center; color: var(--txt-1);
+        }
+        .donate-amount-card:hover {
+            border-color: var(--bb-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,125,197,.15);
+        }
+        .donate-amount-card.selected {
+            background: linear-gradient(135deg, var(--bb-navy), var(--bb-blue));
+            color: white; border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,61,130,.3);
+        }
+        #customAmountInput:focus { outline: none; border-color: var(--bb-blue); box-shadow: 0 0 0 3px rgba(0,125,197,.12); }
+    </style>
 </body>
 </html>
