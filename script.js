@@ -1,283 +1,332 @@
-// Blue Bulls Youth Rugby - Premium JavaScript
-// Handles all interactions, animations, and premium features
+/* ============================================================
+   BLUE BULLS YOUTH RUGBY — Premium JavaScript
+   ============================================================ */
 
-// Page Loading Animation
-window.addEventListener('load', function() {
-    const loader = document.querySelector('.page-loader');
-    if (loader) {
-        setTimeout(() => {
-            loader.classList.add('hidden');
-        }, 500);
-    }
-    
-    // Initialize all images
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', () => {
-                img.classList.add('loaded');
-            });
-        }
-    });
+// PAGE LOADER
+window.addEventListener('load', function () {
+  const loader = document.querySelector('.page-loader');
+  if (loader) {
+    setTimeout(() => loader.classList.add('hidden'), 400);
+  }
 });
 
-// Mobile Menu Toggle
+// NAVBAR SCROLL STATE
+(function () {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// MOBILE MENU TOGGLE
 function toggleMenu() {
-    const navMenu = document.getElementById('navMenu');
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    
-    if (navMenu) {
-        navMenu.classList.toggle('active');
-        
-        // Animate toggle button
-        if (menuToggle) {
-            menuToggle.style.transform = navMenu.classList.contains('active') 
-                ? 'rotate(90deg)' 
-                : 'rotate(0deg)';
-        }
-    }
+  const navMenu = document.getElementById('navMenu');
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  if (!navMenu) return;
+  const isOpen = navMenu.classList.toggle('active');
+  if (toggle) {
+    toggle.textContent = isOpen ? '✕' : '☰';
+    toggle.style.transform = isOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+    toggle.style.transition = 'transform 0.3s ease';
+  }
 }
 
-// Back to Top Button
-(function() {
-    const backToTop = document.querySelector('.back-to-top');
-    
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-})();
-
-// Scroll Reveal Animation
-(function() {
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    
-    if (revealElements.length > 0) {
-        const revealOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        revealElements.forEach(el => {
-            revealOnScroll.observe(el);
-        });
-    }
-})();
-
-// Smooth Scroll for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && href !== '#!') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-    });
-});
-
-// Form Validation Enhancement
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Add loading state to submit button
-        const submitBtn = this.querySelector('button[type="submit"]');
-        if (submitBtn) {
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual submission)
-            setTimeout(() => {
-                // Show success message
-                const successMsg = document.createElement('div');
-                successMsg.className = 'success-message';
-                successMsg.innerHTML = '<strong>Success!</strong> Your message has been sent. We\'ll get back to you soon.';
-                this.parentNode.insertBefore(successMsg, this);
-                
-                // Reset form
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successMsg.style.opacity = '0';
-                    setTimeout(() => successMsg.remove(), 300);
-                }, 5000);
-            }, 1500);
-        }
-    });
-});
-
-// Add Ripple Effect to Buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 1.2;
-        const y = e.clientY - rect.top - size / 1.2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple-effect');
-        
-        this.appendChild(ripple);
-        
-        setTimeout(() => ripple.remove(), 600);
-    });
-});
-
-// Dropdown Menu Enhancement for Mobile
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-    dropdown.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            e.stopPropagation();
-            this.classList.toggle('active');
-        }
-    });
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(e) {
+// Mobile dropdown toggles
+document.querySelectorAll('.dropdown > a').forEach(link => {
+  link.addEventListener('click', function (e) {
     if (window.innerWidth <= 768) {
-        document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
+      e.preventDefault();
+      const dropdown = this.closest('.dropdown');
+      dropdown.classList.toggle('active');
     }
+  });
 });
 
-// Lazy Loading for Images
-(function() {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
-                }
-            }
-        });
-    });
-    
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
+// Close menu on outside click
+document.addEventListener('click', function (e) {
+  const navMenu = document.getElementById('navMenu');
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  if (navMenu && navMenu.classList.contains('active') &&
+    !navMenu.contains(e.target) && !toggle?.contains(e.target)) {
+    navMenu.classList.remove('active');
+    if (toggle) { toggle.textContent = '☰'; toggle.style.transform = 'rotate(0deg)'; }
+  }
+});
+
+// ESC closes menu
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu?.classList.contains('active')) toggleMenu();
+  }
+});
+
+// BACK TO TOP
+(function () {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400), { passive: true });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
 
-// Add Active State to Current Page in Navigation
-(function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.style.color = 'var(--blue-bulls-primary)';
-            link.style.fontWeight = '600';
-        }
+// SCROLL REVEAL with IntersectionObserver
+(function () {
+  const els = document.querySelectorAll('.scroll-reveal');
+  if (!els.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => obs.observe(el));
 })();
 
-// Performance Monitoring
-if ('PerformanceObserver' in window) {
-    const perfObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-            if (entry.duration > 100) {
-                console.warn('Slow operation detected:', entry.name, entry.duration + 'ms');
-            }
-        }
-    });
-    
-    try {
-        perfObserver.observe({ entryTypes: ['measure', 'navigation'] });
-    } catch (e) {
-        // PerformanceObserver not supported
+// SMOOTH SCROLL for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || href === '#!') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-}
-
-// Prevent FOUC (Flash of Unstyled Content)
-document.documentElement.classList.add('js-enabled');
-
-// Add keyboard navigation support
-document.addEventListener('keydown', function(e) {
-    // ESC key closes mobile menu
-    if (e.key === 'Escape') {
-        const navMenu = document.getElementById('navMenu');
-        if (navMenu && navMenu.classList.contains('active')) {
-            toggleMenu();
-        }
-    }
-    
-    // Tab key enhances focus visibility
-    if (e.key === 'Tab') {
-        document.body.classList.add('keyboard-nav');
-    }
+  });
 });
 
-document.addEventListener('mousedown', function() {
-    document.body.classList.remove('keyboard-nav');
+// ACTIVE NAV LINK
+(function () {
+  const page = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-menu a').forEach(a => {
+    if (a.getAttribute('href') === page) {
+      a.style.color = 'var(--bb-blue)';
+      a.style.fontWeight = '700';
+    }
+  });
+})();
+
+// RIPPLE EFFECT on buttons
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('.btn');
+  if (!btn) return;
+  const ripple = document.createElement('span');
+  const rect = btn.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height) * 2;
+  ripple.style.cssText = `
+    position:absolute; border-radius:50%;
+    background:rgba(255,255,255,.25);
+    width:${size}px; height:${size}px;
+    left:${e.clientX - rect.left - size / 2}px;
+    top:${e.clientY - rect.top - size / 2}px;
+    transform:scale(0); animation:rippleAnim 0.55s ease-out forwards;
+    pointer-events:none; z-index:10;
+  `;
+  btn.appendChild(ripple);
+  setTimeout(() => ripple.remove(), 600);
 });
 
-// Console Message (Fun Easter Egg)
-console.log(
-    '%cBlue Bulls Youth Rugby Association',
-    'color: #007DC5; font-size: 24px; font-weight: bold;'
-);
-console.log(
-    '%c🏉 Developing youth rugby excellence',
-    'color: #003D82; font-size: 14px;'
-);
-console.log(
-    '%cWebsite built with premium attention to detail',
-    'color: #4DA8DA; font-size: 12px; font-style: italic;'
-);
+// ============================================================
+// CLUB SEARCH & FILTER (clubs.html)
+// ============================================================
+(function () {
+  const searchInput = document.getElementById('clubSearch');
+  const areaFilter  = document.getElementById('clubAreaFilter');
+  const ageFilter   = document.getElementById('clubAgeFilter');
+  const cards       = document.querySelectorAll('.club-card');
+  const noResults   = document.getElementById('clubNoResults');
 
-// Analytics Ready (placeholder for future implementation)
-window.BBYRA = {
-    version: '1.0.0',
-    initialized: new Date().toISOString(),
-    trackEvent: function(category, action, label) {
-        // Placeholder for analytics tracking
-        console.log('Event:', category, action, label);
-    }
-};
+  if (!searchInput && !areaFilter && !ageFilter) return;
 
-// Service Worker Registration (for PWA capabilities)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Uncomment when service worker is ready
-        // navigator.serviceWorker.register('/sw.js')
-        //     .then(reg => console.log('Service Worker registered'))
-        //     .catch(err => console.log('Service Worker registration failed'));
+  function filterClubs() {
+    const search = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const area   = areaFilter  ? areaFilter.value  : '';
+    const age    = ageFilter   ? ageFilter.value   : '';
+
+    let visible = 0;
+    cards.forEach(card => {
+      const name      = (card.querySelector('h3')?.textContent || '').toLowerCase();
+      const cardArea  = card.dataset.area  || '';
+      const cardAges  = card.dataset.ages  || '';
+
+      const matchSearch = !search || name.includes(search);
+      const matchArea   = !area   || cardArea === area;
+      const matchAge    = !age    || cardAges.includes(age);
+
+      const show = matchSearch && matchArea && matchAge;
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
     });
-}
+
+    if (noResults) noResults.classList.toggle('visible', visible === 0);
+  }
+
+  if (searchInput) searchInput.addEventListener('input', filterClubs);
+  if (areaFilter)  areaFilter.addEventListener('change', filterClubs);
+  if (ageFilter)   ageFilter.addEventListener('change', filterClubs);
+})();
+
+// ============================================================
+// FIXTURES FILTER (fixtures.html)
+// ============================================================
+(function () {
+  const ageSelect  = document.getElementById('fixtureAge');
+  const clubSelect = document.getElementById('fixtureClub');
+  const dateSelect = document.getElementById('fixtureDate');
+
+  if (!ageSelect && !clubSelect && !dateSelect) return;
+
+  function filterFixtures() {
+    const age  = ageSelect  ? ageSelect.value.toLowerCase()  : '';
+    const club = clubSelect ? clubSelect.value.toLowerCase() : '';
+    const date = dateSelect ? dateSelect.value : '';
+
+    document.querySelectorAll('.fixture-row').forEach(row => {
+      const rowAge  = (row.dataset.age  || '').toLowerCase();
+      const rowClub = (row.dataset.club || '').toLowerCase();
+      const rowDate = (row.dataset.dateType || '');
+
+      const matchAge  = !age  || rowAge  === age;
+      const matchClub = !club || rowClub.includes(club);
+      const matchDate = !date || rowDate === date || date === 'all';
+
+      row.classList.toggle('hidden', !(matchAge && matchClub && matchDate));
+    });
+
+    // Show/hide "no results" per table
+    document.querySelectorAll('.fixtures-table').forEach(table => {
+      const rows = table.querySelectorAll('.fixture-row:not(.hidden)');
+      let noResultsRow = table.querySelector('.no-results-row');
+      if (rows.length === 0) {
+        if (!noResultsRow) {
+          noResultsRow = document.createElement('tr');
+          noResultsRow.className = 'no-results-row';
+          noResultsRow.innerHTML = '<td colspan="7" style="text-align:center;padding:32px;color:var(--txt-3);font-style:italic;">No fixtures match your filters</td>';
+          table.querySelector('tbody').appendChild(noResultsRow);
+        }
+        noResultsRow.style.display = '';
+      } else if (noResultsRow) {
+        noResultsRow.style.display = 'none';
+      }
+    });
+  }
+
+  if (ageSelect)  ageSelect.addEventListener('change', filterFixtures);
+  if (clubSelect) clubSelect.addEventListener('change', filterFixtures);
+  if (dateSelect) dateSelect.addEventListener('change', filterFixtures);
+})();
+
+// ============================================================
+// FAQ ACCORDION (parents.html)
+// ============================================================
+(function () {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      // Open clicked if it wasn't open
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+})();
+
+// ============================================================
+// DONATION AMOUNT SELECTION (donate.html)
+// ============================================================
+(function () {
+  document.querySelectorAll('.amount-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      const customInput = document.getElementById('customAmount');
+      const amountField = document.getElementById('donationAmount');
+      const val = this.dataset.amount;
+      if (val === 'custom') {
+        if (customInput) customInput.style.display = 'block';
+      } else {
+        if (customInput) customInput.style.display = 'none';
+        if (amountField) amountField.value = val;
+      }
+    });
+  });
+})();
+
+// ============================================================
+// FORM SUBMISSION (contact.html etc.)
+// ============================================================
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    if (!btn) return;
+    const orig = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      const msg = document.createElement('div');
+      msg.style.cssText = 'background:rgba(0,125,197,.1);border:1px solid var(--bb-blue);border-radius:14px;padding:20px 24px;margin-top:16px;color:var(--bb-dark);font-weight:600;';
+      msg.textContent = '✅ Message sent! We\'ll be in touch within 1–2 business days.';
+      this.insertAdjacentElement('afterend', msg);
+      this.reset();
+      btn.textContent = orig;
+      btn.disabled = false;
+      setTimeout(() => { msg.style.opacity='0'; msg.style.transition='opacity 0.4s'; setTimeout(()=>msg.remove(),400); }, 6000);
+    }, 1200);
+  });
+});
+
+// STATS COUNTER ANIMATION
+(function () {
+  const statEls = document.querySelectorAll('.stat-number[data-target]');
+  if (!statEls.length) return;
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - elapsed, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (elapsed < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  statEls.forEach(el => obs.observe(el));
+})();
+
+// HERO PARALLAX (subtle)
+(function () {
+  const heroBg = document.querySelector('.hero-background');
+  if (!heroBg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      heroBg.style.transform = `scale(1.08) translateY(${y * 0.15}px)`;
+    }
+  }, { passive: true });
+})();
+
+// KEYBOARD NAV indicator
+document.addEventListener('keydown', () => document.body.classList.add('keyboard-nav'));
+document.addEventListener('mousedown', () => document.body.classList.remove('keyboard-nav'));
+
+// Console easter egg
+console.log('%c🏉 BBYRA', 'color:#007DC5;font-size:24px;font-weight:900;font-family:monospace');
+console.log('%cBlue Bulls Youth Rugby Association — Building Champions', 'color:#004F8C;font-size:13px');
+
+window.BBYRA = { version: '2.0.0', initialized: new Date().toISOString() };

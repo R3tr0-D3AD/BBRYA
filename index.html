@@ -23,10 +23,11 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#parents">Parents ▾</a>
+                    <a href="parents.html">Parents ▾</a>
                     <div class="dropdown-content">
-                        <a href="#how-it-works">How Youth Rugby Works</a>
-                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="parents.html">Parent Guide</a>
+                        <a href="parents.html#how-it-works">How Youth Rugby Works</a>
+                        <a href="parents.html#age-groups">Age Groups (U7–U18)</a>
                         <a href="safeguarding.html">Safety & Safeguarding</a>
                     </div>
                 </li>
@@ -49,17 +50,19 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="hero-rugby-kids-action.jpg" alt="Youth rugby players in action" class="hero-background" style="object-fit: cover;">
+        <img src="hero-rugby-kids-action.jpg" alt="Youth rugby players in action" class="hero-background">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Blue Bulls Youth Rugby</h1>
-            <p class="hero-subtitle">Developing youth rugby excellence across the Blue Bulls region</p>
+            <div class="hero-tag">🏉 Blue Bulls Region</div>
+            <h1>Blue Bulls<span>Youth Rugby</span></h1>
+            <p class="hero-subtitle">Developing youth rugby excellence across the Blue Bulls region — from U7 grassroots to U18 representative level.</p>
             <div class="cta-buttons">
                 <a href="clubs.html" class="btn btn-primary">Find a Club</a>
                 <a href="fixtures.html" class="btn btn-secondary">Fixtures & Results</a>
                 <a href="contact.html" class="btn btn-secondary">Get Involved</a>
             </div>
         </div>
+        <div class="hero-scroll">Scroll</div>
     </section>
 
     <!-- Welcome Section -->
@@ -270,8 +273,7 @@
             <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
         </div>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classLis
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

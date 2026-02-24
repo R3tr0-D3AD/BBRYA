@@ -22,10 +22,11 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#parents">Parents ▾</a>
+                    <a href="parents.html">Parents ▾</a>
                     <div class="dropdown-content">
-                        <a href="#how-it-works">How Youth Rugby Works</a>
-                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="parents.html">Parent Guide</a>
+                        <a href="parents.html#how-it-works">How Youth Rugby Works</a>
+                        <a href="parents.html#age-groups">Age Groups (U7–U18)</a>
                         <a href="safeguarding.html">Safety & Safeguarding</a>
                     </div>
                 </li>
@@ -47,7 +48,7 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="section" style="padding-top: 60px; padding-bottom: 40px; background: linear-gradient(135deg, #004C97 0%, #007DC5 100%); color: white;">
+    <section class="page-hero">
         <div class="container">
             <h1 style="font-size: 3rem; margin-bottom: 15px;">Affiliated Clubs</h1>
             <p style="font-size: 1.2rem; opacity: 0.9;">Find a youth rugby club in your area and start your rugby journey</p>
@@ -59,29 +60,29 @@
         <div class="container">
             <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 40px;">
                 <h3 style="margin-bottom: 20px; color: #007DC5;">Search & Filter Clubs</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                    <input type="text" placeholder="Search by club name..." style="padding: 12px; border: 2px solid var(--background-secondary); border-radius: 6px; font-size: 1rem;">
-                    <select style="padding: 12px; border: 2px solid var(--background-secondary); border-radius: 6px; font-size: 1rem;">
-                        <option>All Areas</option>
-                        <option>Pretoria North</option>
-                        <option>Pretoria East</option>
-                        <option>Centurion</option>
-                        <option>Midrand</option>
-                        <option>Bronkhorstspruit</option>
+                <div class="fixtures-filters">
+                    <input type="text" id="clubSearch" placeholder="🔍  Search by club name...">
+                    <select id="clubAreaFilter">
+                        <option value="">All Areas</option>
+                        <option value="Pretoria North">Pretoria North</option>
+                        <option value="Pretoria East">Pretoria East</option>
+                        <option value="Centurion">Centurion</option>
+                        <option value="Midrand">Midrand</option>
                     </select>
-                    <select style="padding: 12px; border: 2px solid var(--background-secondary); border-radius: 6px; font-size: 1rem;">
-                        <option>All Age Groups</option>
-                        <option>U7-U9</option>
-                        <option>U10-U13</option>
-                        <option>U14-U18</option>
+                    <select id="clubAgeFilter">
+                        <option value="">All Age Groups</option>
+                        <option value="U7-U9">U7–U9 (Mini)</option>
+                        <option value="U10-U13">U10–U13 (Junior)</option>
+                        <option value="U14-U18">U14–U18 (Youth)</option>
                     </select>
                 </div>
+                <div id="clubNoResults" class="no-results">No clubs match your search. Try different filters.</div>
             </div>
 
             <!-- Clubs Grid -->
             <div class="card-grid">
                 <!-- Club 1 -->
-                <div class="card club-card">
+                <div class="card club-card" data-area="Pretoria North" data-ages="U7-U9 U10-U13 U14-U18">
                     <img src="club-logo-pretoria-bulls.png" alt="Pretoria Bulls RFC Logo" class="club-logo" style="width: 100%; height: 220px; object-fit: contain; padding: 20px;">
                     <div class="card-content">
                         <h3>Pretoria Bulls RFC</h3>
@@ -96,14 +97,14 @@
                         </div>
                         <p style="margin: 15px 0; color: var(--text-secondary);">Established rugby club with excellent facilities and experienced coaching staff.</p>
                         <div style="display: flex; gap: 10px;">
-                            <a href="#" class="btn btn-primary" style="flex: 1;">📧 Email</a>
-                            <a href="#" class="btn btn-secondary" style="flex: 1;">📱 WhatsApp</a>
+                            <a href="contact.html" class="btn btn-primary" style="flex:1;font-size:13px;padding:10px 14px;">📧 Email</a>
+                            <a href="#" class="btn btn-outline" style="flex:1;font-size:13px;padding:10px 14px;">📱 WhatsApp</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Club 2 -->
-                <div class="card club-card">
+                <div class="card club-card" data-area="Centurion" data-ages="U7-U9 U10-U13 U14-U18">
                     <img src="club-logo-centurion.png" alt="Centurion RFC Logo" class="club-logo" style="width: 100%; height: 220px; object-fit: contain; padding: 20px;">
                     <div class="card-content">
                         <h3>Centurion RFC</h3>
@@ -118,14 +119,14 @@
                         </div>
                         <p style="margin: 15px 0; color: var(--text-secondary);">Family-friendly club focusing on player development and community spirit.</p>
                         <div style="display: flex; gap: 10px;">
-                            <a href="#" class="btn btn-primary" style="flex: 1;">📧 Email</a>
-                            <a href="#" class="btn btn-secondary" style="flex: 1;">📱 WhatsApp</a>
+                            <a href="contact.html" class="btn btn-primary" style="flex:1;font-size:13px;padding:10px 14px;">📧 Email</a>
+                            <a href="#" class="btn btn-outline" style="flex:1;font-size:13px;padding:10px 14px;">📱 WhatsApp</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Club 3 -->
-                <div class="card club-card">
+                <div class="card club-card" data-area="Pretoria North" data-ages="U10-U13 U14-U18">
                     <img src="club-logo-wonderboom.png" alt="Wonderboom RFC Logo" class="club-logo" style="width: 100%; height: 220px; object-fit: contain; padding: 20px;">
                     <div class="card-content">
                         <h3>Wonderboom RFC</h3>
@@ -139,14 +140,14 @@
                         </div>
                         <p style="margin: 15px 0; color: var(--text-secondary);">Competitive club with strong track record in regional tournaments.</p>
                         <div style="display: flex; gap: 10px;">
-                            <a href="#" class="btn btn-primary" style="flex: 1;">📧 Email</a>
-                            <a href="#" class="btn btn-secondary" style="flex: 1;">📱 WhatsApp</a>
+                            <a href="contact.html" class="btn btn-primary" style="flex:1;font-size:13px;padding:10px 14px;">📧 Email</a>
+                            <a href="#" class="btn btn-outline" style="flex:1;font-size:13px;padding:10px 14px;">📱 WhatsApp</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Club 4 -->
-                <div class="card club-card">
+                <div class="card club-card" data-area="Centurion" data-ages="U7-U9 U10-U13 U14-U18">
                     <img src="club-logo-irene.png" alt="Irene RFC Logo" class="club-logo" style="width: 100%; height: 220px; object-fit: contain; padding: 20px;">
                     <div class="card-content">
                         <h3>Irene RFC</h3>
@@ -161,14 +162,14 @@
                         </div>
                         <p style="margin: 15px 0; color: var(--text-secondary);">Welcoming club environment with emphasis on fun and skill development.</p>
                         <div style="display: flex; gap: 10px;">
-                            <a href="#" class="btn btn-primary" style="flex: 1;">📧 Email</a>
-                            <a href="#" class="btn btn-secondary" style="flex: 1;">📱 WhatsApp</a>
+                            <a href="contact.html" class="btn btn-primary" style="flex:1;font-size:13px;padding:10px 14px;">📧 Email</a>
+                            <a href="#" class="btn btn-outline" style="flex:1;font-size:13px;padding:10px 14px;">📱 WhatsApp</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Club 5 -->
-                <div class="card club-card">
+                <div class="card club-card" data-area="Pretoria East" data-ages="U7-U9 U10-U13 U14-U18">
                     <img src="club-logo-menlo-park.png" alt="Menlo Park RFC Logo" class="club-logo" style="width: 100%; height: 220px; object-fit: contain; padding: 20px;">
                     <div class="card-content">
                         <h3>Menlo Park RFC</h3>
@@ -183,14 +184,14 @@
                         </div>
                         <p style="margin: 15px 0; color: var(--text-secondary);">Strong community club with modern facilities and dedicated volunteers.</p>
                         <div style="display: flex; gap: 10px;">
-                            <a href="#" class="btn btn-primary" style="flex: 1;">📧 Email</a>
-                            <a href="#" class="btn btn-secondary" style="flex: 1;">📱 WhatsApp</a>
+                            <a href="contact.html" class="btn btn-primary" style="flex:1;font-size:13px;padding:10px 14px;">📧 Email</a>
+                            <a href="#" class="btn btn-outline" style="flex:1;font-size:13px;padding:10px 14px;">📱 WhatsApp</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Club 6 -->
-                <div class="card club-card">
+                <div class="card club-card" data-area="Midrand" data-ages="U7-U9 U10-U13 U14-U18">
                     <img src="club-logo-midrand.png" alt="Midrand RFC Logo" class="club-logo" style="width: 100%; height: 220px; object-fit: contain; padding: 20px;">
                     <div class="card-content">
                         <h3>Midrand RFC</h3>
@@ -205,8 +206,8 @@
                         </div>
                         <p style="margin: 15px 0; color: var(--text-secondary);">Growing club serving the Midrand community with passion and dedication.</p>
                         <div style="display: flex; gap: 10px;">
-                            <a href="#" class="btn btn-primary" style="flex: 1;">📧 Email</a>
-                            <a href="#" class="btn btn-secondary" style="flex: 1;">📱 WhatsApp</a>
+                            <a href="contact.html" class="btn btn-primary" style="flex:1;font-size:13px;padding:10px 14px;">📧 Email</a>
+                            <a href="#" class="btn btn-outline" style="flex:1;font-size:13px;padding:10px 14px;">📱 WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -265,8 +266,7 @@
             <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
         </div>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle(
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

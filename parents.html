@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents Guide | BBYRA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-loader">
+        <div class="loader-content"><div class="loader-spinner"></div></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BBYRA</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="parents.html">Parents ▾</a>
+                    <div class="dropdown-content">
+                        <a href="parents.html">Parent Guide</a>
+                        <a href="parents.html#how-it-works">How Youth Rugby Works</a>
+                        <a href="parents.html#age-groups">Age Groups (U7–U18)</a>
+                        <a href="safeguarding.html">Safety & Safeguarding</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="clubs.html">Clubs ▾</a>
+                    <div class="dropdown-content">
+                        <a href="clubs.html">Affiliated Clubs</a>
+                        <a href="clubs.html#resources">Club Resources</a>
+                    </div>
+                </li>
+                <li><a href="fixtures.html">Fixtures & Results</a></li>
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="about.html">About BBYRA</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact / Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Parents Guide</h1>
+            <p>Everything you need to know about getting your child into youth rugby</p>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">New to Youth Rugby?</h2>
+            <p class="section-subtitle">Here's your simple 3-step guide to getting your child started with BBYRA</p>
+
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); margin-top: 40px;">
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="text-align:center; padding: 40px 28px;">
+                        <div style="font-size:3.5rem; margin-bottom:16px;">1️⃣</div>
+                        <h3>Find a Club</h3>
+                        <p>Browse our directory of affiliated clubs across the Blue Bulls region. Search by area and age group to find the best fit for your child.</p>
+                        <a href="clubs.html" class="btn btn-outline">Browse Clubs</a>
+                    </div>
+                </div>
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="text-align:center; padding: 40px 28px;">
+                        <div style="font-size:3.5rem; margin-bottom:16px;">2️⃣</div>
+                        <h3>Register Your Child</h3>
+                        <p>Contact your chosen club directly. They'll guide you through registration, kit requirements, and your first training session.</p>
+                        <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="card scroll-reveal">
+                    <div class="card-content" style="text-align:center; padding: 40px 28px;">
+                        <div style="font-size:3.5rem; margin-bottom:16px;">3️⃣</div>
+                        <h3>Start Playing!</h3>
+                        <p>Your child joins their age group, meets teammates, and begins their rugby journey in a safe, fun, and supportive environment.</p>
+                        <a href="fixtures.html" class="btn btn-outline">View Fixtures</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Groups -->
+    <section class="section bg-light" id="age-groups">
+        <div class="container">
+            <h2 class="section-title">Age Groups</h2>
+            <p class="section-subtitle">Our structured player pathway from mini rugby through to competitive youth rugby</p>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:24px; margin-top:40px;">
+
+                <div class="age-group-card scroll-reveal">
+                    <div class="age-group-header" style="background: linear-gradient(135deg, #1a5276, #2e86c1);">
+                        <h3>Mini Rugby</h3>
+                        <div class="age-range">U7 · U8 · U9 · Ages 7–9</div>
+                    </div>
+                    <div class="age-group-body">
+                        <ul>
+                            <li>Tag/touch format — no full contact</li>
+                            <li>Small teams, small fields</li>
+                            <li>Focus on fun and basic skills</li>
+                            <li>Ball handling, running, passing</li>
+                            <li>Participation trophies — no league tables</li>
+                            <li>Sessions typically 45–60 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="age-group-card scroll-reveal">
+                    <div class="age-group-header" style="background: linear-gradient(135deg, #154360, #1a5276);">
+                        <h3>Junior Rugby</h3>
+                        <div class="age-range">U10 · U11 · U12 · U13 · Ages 10–13</div>
+                    </div>
+                    <div class="age-group-body">
+                        <ul>
+                            <li>Gradual introduction to contact (U11+)</li>
+                            <li>Full scrums and lineouts introduced at U13</li>
+                            <li>Structured skills development</li>
+                            <li>Competitive league fixtures</li>
+                            <li>Representative trials available</li>
+                            <li>Sessions typically 60–75 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="age-group-card scroll-reveal">
+                    <div class="age-group-header" style="background: linear-gradient(135deg, #002B5B, #003D82);">
+                        <h3>Youth Rugby</h3>
+                        <div class="age-range">U14 · U15 · U16 · U17 · U18 · Ages 14–18</div>
+                    </div>
+                    <div class="age-group-body">
+                        <ul>
+                            <li>Full 15-a-side competitive rugby</li>
+                            <li>Regional and national tournaments</li>
+                            <li>Representative selection pathways</li>
+                            <li>Strength & conditioning guidance</li>
+                            <li>Senior rugby transition support</li>
+                            <li>Sessions typically 75–90 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Safety First</h2>
+            <p class="section-subtitle">Your child's wellbeing is our highest priority at every level of the game</p>
+
+            <div class="alert scroll-reveal">
+                <h3>🛡️ Our Safeguarding Promise</h3>
+                <p>All BBYRA coaches and volunteers undergo background screening (SAPS clearance), hold valid first aid certificates, and complete our mandatory child protection training. We maintain a zero-tolerance policy toward abuse of any kind.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:28px; margin-top:40px; text-align:center;" class="scroll-reveal">
+                <div style="background:var(--bg-card); border-radius:var(--r-xl); padding:32px 24px; border:1px solid var(--br-c); box-shadow:var(--sh-sm);">
+                    <div style="font-size:2.5rem; margin-bottom:12px;">🔍</div>
+                    <h4 style="color:var(--bb-dark); font-size:16px; font-weight:700; margin-bottom:8px;">Background Checks</h4>
+                    <p style="font-size:14px; color:var(--txt-2);">All coaches & volunteers police-cleared</p>
+                </div>
+                <div style="background:var(--bg-card); border-radius:var(--r-xl); padding:32px 24px; border:1px solid var(--br-c); box-shadow:var(--sh-sm);">
+                    <div style="font-size:2.5rem; margin-bottom:12px;">🏥</div>
+                    <h4 style="color:var(--bb-dark); font-size:16px; font-weight:700; margin-bottom:8px;">First Aid Certified</h4>
+                    <p style="font-size:14px; color:var(--txt-2);">Qualified first aiders at every match</p>
+                </div>
+                <div style="background:var(--bg-card); border-radius:var(--r-xl); padding:32px 24px; border:1px solid var(--br-c); box-shadow:var(--sh-sm);">
+                    <div style="font-size:2.5rem; margin-bottom:12px;">⛑️</div>
+                    <h4 style="color:var(--bb-dark); font-size:16px; font-weight:700; margin-bottom:8px;">Proper Equipment</h4>
+                    <p style="font-size:14px; color:var(--txt-2);">Mouthguards, headguards & appropriate kit</p>
+                </div>
+                <div style="background:var(--bg-card); border-radius:var(--r-xl); padding:32px 24px; border:1px solid var(--br-c); box-shadow:var(--sh-sm);">
+                    <div style="font-size:2.5rem; margin-bottom:12px;">📋</div>
+                    <h4 style="color:var(--bb-dark); font-size:16px; font-weight:700; margin-bottom:8px;">Clear Policies</h4>
+                    <p style="font-size:14px; color:var(--txt-2);">Codes of conduct for players & parents</p>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:40px;">
+                <a href="safeguarding.html" class="btn btn-outline">Read our Full Safeguarding Policy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">What to Expect</h2>
+            <p class="section-subtitle">A typical season with BBYRA</p>
+
+            <div style="max-width:800px; margin: 40px auto 0; display:grid; gap:0;">
+                <div style="display:flex; gap:24px; padding:28px 0; border-bottom:1px solid var(--br-c);" class="scroll-reveal">
+                    <div style="min-width:60px; font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; color:var(--bb-blue); line-height:1;">FEB</div>
+                    <div>
+                        <h4 style="color:var(--bb-dark); margin-bottom:6px;">Season Registration Opens</h4>
+                        <p style="color:var(--txt-2); font-size:15px;">Register your child with your chosen club. Collect registration forms, medical info and pay season fees.</p>
+                    </div>
+                </div>
+                <div style="display:flex; gap:24px; padding:28px 0; border-bottom:1px solid var(--br-c);" class="scroll-reveal">
+                    <div style="min-width:60px; font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; color:var(--bb-blue); line-height:1;">MAR</div>
+                    <div>
+                        <h4 style="color:var(--bb-dark); margin-bottom:6px;">Season Kickoff & Fixtures Begin</h4>
+                        <p style="color:var(--txt-2); font-size:15px;">Training ramps up and weekend fixtures start. Check the fixtures page for your club's schedule.</p>
+                    </div>
+                </div>
+                <div style="display:flex; gap:24px; padding:28px 0; border-bottom:1px solid var(--br-c);" class="scroll-reveal">
+                    <div style="min-width:60px; font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; color:var(--bb-blue); line-height:1;">APR</div>
+                    <div>
+                        <h4 style="color:var(--bb-dark); margin-bottom:6px;">Mid-Season Tournaments</h4>
+                        <p style="color:var(--txt-2); font-size:15px;">Regional tournaments take place. Great family days out with multiple matches across age groups.</p>
+                    </div>
+                </div>
+                <div style="display:flex; gap:24px; padding:28px 0; border-bottom:1px solid var(--br-c);" class="scroll-reveal">
+                    <div style="min-width:60px; font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; color:var(--bb-blue); line-height:1;">JUN</div>
+                    <div>
+                        <h4 style="color:var(--bb-dark); margin-bottom:6px;">Representative Trials</h4>
+                        <p style="color:var(--txt-2); font-size:15px;">Trials for Blue Bulls representative teams (U13–U18). Outstanding players identified for higher honours.</p>
+                    </div>
+                </div>
+                <div style="display:flex; gap:24px; padding:28px 0;" class="scroll-reveal">
+                    <div style="min-width:60px; font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; color:var(--bb-blue); line-height:1;">AUG</div>
+                    <div>
+                        <h4 style="color:var(--bb-dark); margin-bottom:6px;">Season Wrap-Up & Awards</h4>
+                        <p style="color:var(--txt-2); font-size:15px;">End-of-season celebrations, awards ceremonies, and sign-ups for next season begin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kit & Costs -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Kit & Costs</h2>
+            <p class="section-subtitle">What your child will need to play rugby</p>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:32px; margin-top:40px;">
+                <div class="scroll-reveal">
+                    <h3 style="color:var(--bb-dark); font-family:'Barlow Condensed',sans-serif; font-size:28px; text-transform:uppercase; margin-bottom:20px;">Essential Kit</h3>
+                    <div style="display:grid; gap:12px;">
+                        <div style="display:flex; align-items:center; gap:14px; padding:16px; background:var(--bg-card); border-radius:var(--r-md); border:1px solid var(--br-c);">
+                            <span style="font-size:1.8rem;">👕</span>
+                            <div><strong>Club Jersey & Shorts</strong><br><span style="font-size:13px;color:var(--txt-3);">Supplied by your club on registration</span></div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:14px; padding:16px; background:var(--bg-card); border-radius:var(--r-md); border:1px solid var(--br-c);">
+                            <span style="font-size:1.8rem;">🦷</span>
+                            <div><strong>Mouthguard (mandatory)</strong><br><span style="font-size:13px;color:var(--txt-3);">Custom-fit from a dentist recommended</span></div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:14px; padding:16px; background:var(--bg-card); border-radius:var(--r-md); border:1px solid var(--br-c);">
+                            <span style="font-size:1.8rem;">👟</span>
+                            <div><strong>Rugby Boots</strong><br><span style="font-size:13px;color:var(--txt-3);">Soft-ground studs for most pitches</span></div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:14px; padding:16px; background:var(--bg-card); border-radius:var(--r-md); border:1px solid var(--br-c);">
+                            <span style="font-size:1.8rem;">🧤</span>
+                            <div><strong>Rugby Socks & Base Layer</strong><br><span style="font-size:13px;color:var(--txt-3);">For warmth and comfort</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal">
+                    <h3 style="color:var(--bb-dark); font-family:'Barlow Condensed',sans-serif; font-size:28px; text-transform:uppercase; margin-bottom:20px;">Typical Costs</h3>
+                    <div style="background:var(--bg-card); border-radius:var(--r-xl); border:1px solid var(--br-c); overflow:hidden;">
+                        <div style="padding:20px 24px; border-bottom:1px solid var(--br-c); display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:15px; color:var(--txt-2);">Annual registration fee</span>
+                            <span style="font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:800; color:var(--bb-dark);">R400–R800</span>
+                        </div>
+                        <div style="padding:20px 24px; border-bottom:1px solid var(--br-c); display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:15px; color:var(--txt-2);">Club jersey & shorts</span>
+                            <span style="font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:800; color:var(--bb-dark);">R300–R600</span>
+                        </div>
+                        <div style="padding:20px 24px; border-bottom:1px solid var(--br-c); display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:15px; color:var(--txt-2);">Rugby boots</span>
+                            <span style="font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:800; color:var(--bb-dark);">R300–R800</span>
+                        </div>
+                        <div style="padding:20px 24px; display:flex; justify-content:space-between; align-items:center; background:var(--bb-ultra);">
+                            <span style="font-size:15px; color:var(--bb-dark); font-weight:700;">Total estimated first year</span>
+                            <span style="font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:900; color:var(--bb-navy);">~R1000–R2200</span>
+                        </div>
+                    </div>
+                    <p style="font-size:13px; color:var(--txt-3); margin-top:12px;">* Costs vary by club. Bursaries may be available — contact your club or BBYRA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parent Code of Conduct -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Parent Code of Conduct</h2>
+            <p class="section-subtitle">Rugby is a values-led sport. We ask all parents and spectators to uphold these standards.</p>
+
+            <div style="max-width:800px; margin: 40px auto 0; background:var(--bg-card); border-radius:var(--r-xl); border:1px solid var(--br-c); overflow:hidden;">
+                <div style="padding:28px 32px; border-bottom:1px solid var(--br-c); display:flex; gap:16px; align-items:flex-start;">
+                    <span style="font-size:1.6rem; flex-shrink:0;">✅</span>
+                    <div><strong style="color:var(--bb-dark);">Encourage, don't coach</strong><br><span style="color:var(--txt-2); font-size:15px;">Cheer for all players, not just your child. Leave the coaching to the coaches.</span></div>
+                </div>
+                <div style="padding:28px 32px; border-bottom:1px solid var(--br-c); display:flex; gap:16px; align-items:flex-start;">
+                    <span style="font-size:1.6rem; flex-shrink:0;">✅</span>
+                    <div><strong style="color:var(--bb-dark);">Respect officials</strong><br><span style="color:var(--txt-2); font-size:15px;">Referees and touch judges are often volunteers. Respect their decisions at all times.</span></div>
+                </div>
+                <div style="padding:28px 32px; border-bottom:1px solid var(--br-c); display:flex; gap:16px; align-items:flex-start;">
+                    <span style="font-size:1.6rem; flex-shrink:0;">✅</span>
+                    <div><strong style="color:var(--bb-dark);">Celebrate both teams</strong><br><span style="color:var(--txt-2); font-size:15px;">Applaud good play from both sides. Win or lose, acknowledge the effort of all players.</span></div>
+                </div>
+                <div style="padding:28px 32px; border-bottom:1px solid var(--br-c); display:flex; gap:16px; align-items:flex-start;">
+                    <span style="font-size:1.6rem; flex-shrink:0;">✅</span>
+                    <div><strong style="color:var(--bb-dark);">No negative sideline behaviour</strong><br><span style="color:var(--txt-2); font-size:15px;">Verbal abuse toward players, coaches, or officials will not be tolerated and may result in removal.</span></div>
+                </div>
+                <div style="padding:28px 32px; display:flex; gap:16px; align-items:flex-start;">
+                    <span style="font-size:1.6rem; flex-shrink:0;">✅</span>
+                    <div><strong style="color:var(--bb-dark);">Support your child regardless of outcome</strong><br><span style="color:var(--txt-2); font-size:15px;">After the game, your child needs your unconditional love — not a performance debrief.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div style="max-width:800px; margin: 40px auto 0;" id="faqContainer">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        At what age can my child start playing rugby?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Our youngest age group is U7, meaning children aged 6 turning 7 in that calendar year. Mini rugby (U7–U9) is non-contact and focuses entirely on fun and basic skills. There's no better time to start!</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is rugby safe for young children?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Youth rugby is structured specifically with age-appropriate safety rules. U7–U9 is tag/touch rugby with no contact. Contact is introduced gradually from U10, and full rugby rules apply from U13+. SA Rugby has stringent laws governing youth contact to minimise injury risk, and all our coaches are trained in safe tackle technique.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Does my child need experience to join?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Absolutely not! Many children join with zero rugby experience. Our coaches cater to all abilities. The younger age groups in particular are designed as a first introduction to the sport, so beginners are always welcome.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What happens if my child is injured?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">All clubs are required to have a qualified first aider present at training and matches. Registered players are covered by the SA Rugby insurance scheme. For serious injuries, we follow a Head Injury Assessment (HIA) protocol and players must receive medical clearance before returning to play (the "If in doubt, sit it out" rule).</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How many hours per week is the commitment?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Mini rugby (U7–U9): typically one training session per week plus a Saturday morning match. Junior & Youth (U10+): two training sessions per week plus weekend fixtures. Tournament weekends occur a few times per season. The exact schedule depends on your club.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can my daughter play rugby?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes! Girls are welcome to participate in mixed age groups at all levels under our jurisdiction. We also work to grow girls' rugby as its own pathway. Contact us or your local club for specific information about girls' rugby opportunities in your area.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are financial assistance or bursaries available?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We believe rugby should be accessible to all. Some clubs offer subsidised fees or assistance with kit costs. BBYRA also works with sponsors and donors to support players from disadvantaged backgrounds. Please contact us confidentially to discuss options — we do not want finances to be a barrier to participation.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-light">
+        <div class="container" style="text-align:center;">
+            <h2 style="font-family:'Barlow Condensed',sans-serif; font-size:clamp(32px,5vw,56px); text-transform:uppercase; color:var(--bb-dark); margin-bottom:16px;">Ready to Get Started?</h2>
+            <p style="font-size:18px; color:var(--txt-2); max-width:600px; margin:0 auto 36px; line-height:1.6;">Find a club near you and give your child the gift of rugby — character, friendships, and a lifelong love of sport.</p>
+            <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+                <a href="clubs.html" class="btn btn-primary" style="padding:16px 36px;">Find a Club</a>
+                <a href="contact.html" class="btn btn-outline" style="padding:16px 36px;">Ask a Question</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>Blue Bulls Youth Rugby Association</h4>
+                <p>Developing youth rugby excellence across the Blue Bulls region, serving parents, players, clubs, coaches, volunteers, and sponsors.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="WhatsApp">📱</a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="clubs.html">Find a Club</a>
+                <a href="fixtures.html">Fixtures & Results</a>
+                <a href="safeguarding.html">Safeguarding</a>
+                <a href="news.html">News & Events</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div>
+                <h4>Get Involved</h4>
+                <a href="contact.html">Volunteer</a>
+                <a href="contact.html">Coach Registration</a>
+                <a href="partners.html">Become a Partner</a>
+                <a href="contact.html">Club Affiliation</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>📧 info@bbyra.co.za</p>
+                <p>📍 Serving the Blue Bulls Region</p>
+                <p>🕐 Mon–Fri: 9:00 AM – 5:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blue Bulls Youth Rugby Association. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

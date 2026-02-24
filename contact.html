@@ -22,10 +22,11 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#parents">Parents ▾</a>
+                    <a href="parents.html">Parents ▾</a>
                     <div class="dropdown-content">
-                        <a href="#how-it-works">How Youth Rugby Works</a>
-                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="parents.html">Parent Guide</a>
+                        <a href="parents.html#how-it-works">How Youth Rugby Works</a>
+                        <a href="parents.html#age-groups">Age Groups (U7–U18)</a>
                         <a href="safeguarding.html">Safety & Safeguarding</a>
                     </div>
                 </li>
@@ -47,7 +48,7 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="section" style="padding-top: 60px; padding-bottom: 40px; background: linear-gradient(135deg, #004C97 0%, #007DC5 100%); color: white;">
+    <section class="page-hero">
         <div class="container">
             <h1 style="font-size: 3rem; margin-bottom: 15px;">Contact & Get Involved</h1>
             <p style="font-size: 1.2rem; opacity: 0.9;">We'd love to hear from you. Choose the option that best fits your needs.</p>
@@ -372,23 +373,7 @@
             <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
         </div>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
-        }
-
-        function showForm(formType) {
-            // Hide all forms
-            document.querySelectorAll('.contact-form-container').forEach(form => {
-                form.style.display = 'none';
-            });
-            
-            // Remove active state from all buttons
-            document.querySelectorAll('button[onclick^="showForm"]').forEach(btn => {
-                btn.className = 'btn btn-secondary';
-            });
-            
-            // Show selected form
-            document.getElementById(formType + '-form').style.display = '
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

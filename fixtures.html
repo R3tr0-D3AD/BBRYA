@@ -22,10 +22,11 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#parents">Parents ▾</a>
+                    <a href="parents.html">Parents ▾</a>
                     <div class="dropdown-content">
-                        <a href="#how-it-works">How Youth Rugby Works</a>
-                        <a href="#age-groups">Age Groups (U7–U18)</a>
+                        <a href="parents.html">Parent Guide</a>
+                        <a href="parents.html#how-it-works">How Youth Rugby Works</a>
+                        <a href="parents.html#age-groups">Age Groups (U7–U18)</a>
                         <a href="safeguarding.html">Safety & Safeguarding</a>
                     </div>
                 </li>
@@ -47,7 +48,7 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="section" style="padding-top: 60px; padding-bottom: 40px; background: linear-gradient(135deg, #004C97 0%, #007DC5 100%); color: white;">
+    <section class="page-hero">
         <div class="container">
             <h1 style="font-size: 3rem; margin-bottom: 15px;">Fixtures & Results</h1>
             <p style="font-size: 1.2rem; opacity: 0.9;">View upcoming matches and recent results across all age groups</p>
@@ -60,36 +61,26 @@
             <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 40px;">
                 <h3 style="margin-bottom: 20px; color: #007DC5;">Filter Fixtures</h3>
                 <div class="fixtures-filters">
-                    <select>
-                        <option>All Age Groups</option>
-                        <option>U7</option>
-                        <option>U8</option>
-                        <option>U9</option>
-                        <option>U10</option>
-                        <option>U11</option>
-                        <option>U12</option>
-                        <option>U13</option>
-                        <option>U14</option>
-                        <option>U15</option>
-                        <option>U16</option>
-                        <option>U17</option>
-                        <option>U18</option>
+                    <select id="fixtureAge">
+                        <option value="">All Age Groups</option>
+                        <option value="u7">U7</option><option value="u8">U8</option><option value="u9">U9</option>
+                        <option value="u10">U10</option><option value="u11">U11</option><option value="u12">U12</option>
+                        <option value="u13">U13</option><option value="u14">U14</option><option value="u15">U15</option>
+                        <option value="u16">U16</option><option value="u17">U17</option><option value="u18">U18</option>
                     </select>
-                    <select>
-                        <option>All Clubs</option>
-                        <option>Pretoria Bulls RFC</option>
-                        <option>Centurion RFC</option>
-                        <option>Wonderboom RFC</option>
-                        <option>Irene RFC</option>
-                        <option>Menlo Park RFC</option>
-                        <option>Midrand RFC</option>
+                    <select id="fixtureClub">
+                        <option value="">All Clubs</option>
+                        <option value="pretoria bulls">Pretoria Bulls RFC</option>
+                        <option value="centurion">Centurion RFC</option>
+                        <option value="wonderboom">Wonderboom RFC</option>
+                        <option value="irene">Irene RFC</option>
+                        <option value="menlo park">Menlo Park RFC</option>
+                        <option value="midrand">Midrand RFC</option>
                     </select>
-                    <select>
-                        <option>All Dates</option>
-                        <option>Today</option>
-                        <option>This Week</option>
-                        <option>This Month</option>
-                        <option>Past Results</option>
+                    <select id="fixtureDate">
+                        <option value="all">All Dates</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="past">Past Results</option>
                     </select>
                 </div>
             </div>
@@ -110,7 +101,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="fixture-row" data-age="u13" data-club="pretoria bulls rfc centurion rfc" data-date-type="upcoming">
                             <td><span class="badge">U13</span></td>
                             <td>15 Feb 2026</td>
                             <td>09:00</td>
@@ -118,7 +109,7 @@
                             <td>Centurion RFC</td>
                             <td>Loftus Versfeld Mini Fields</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u15" data-club="wonderboom rfc menlo park rfc" data-date-type="upcoming">
                             <td><span class="badge">U15</span></td>
                             <td>15 Feb 2026</td>
                             <td>10:30</td>
@@ -126,7 +117,7 @@
                             <td>Menlo Park RFC</td>
                             <td>Wonderboom Stadium</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u11" data-club="irene rfc midrand rfc" data-date-type="upcoming">
                             <td><span class="badge">U11</span></td>
                             <td>15 Feb 2026</td>
                             <td>11:00</td>
@@ -134,7 +125,7 @@
                             <td>Midrand RFC</td>
                             <td>Irene Country Club</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u17" data-club="centurion rfc pretoria bulls rfc" data-date-type="upcoming">
                             <td><span class="badge">U17</span></td>
                             <td>16 Feb 2026</td>
                             <td>14:00</td>
@@ -142,7 +133,7 @@
                             <td>Pretoria Bulls RFC</td>
                             <td>Centurion High School</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u9" data-club="menlo park rfc irene rfc" data-date-type="upcoming">
                             <td><span class="badge">U9</span></td>
                             <td>16 Feb 2026</td>
                             <td>09:30</td>
@@ -150,7 +141,7 @@
                             <td>Irene RFC</td>
                             <td>Menlo Park Sports Grounds</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u14" data-club="midrand rfc wonderboom rfc" data-date-type="upcoming">
                             <td><span class="badge">U14</span></td>
                             <td>22 Feb 2026</td>
                             <td>10:00</td>
@@ -158,7 +149,7 @@
                             <td>Wonderboom RFC</td>
                             <td>Midrand High School</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u12" data-club="pretoria bulls rfc irene rfc" data-date-type="upcoming">
                             <td><span class="badge">U12</span></td>
                             <td>22 Feb 2026</td>
                             <td>11:30</td>
@@ -166,7 +157,7 @@
                             <td>Irene RFC</td>
                             <td>Loftus Versfeld Mini Fields</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u16" data-club="centurion rfc menlo park rfc" data-date-type="upcoming">
                             <td><span class="badge">U16</span></td>
                             <td>23 Feb 2026</td>
                             <td>13:00</td>
@@ -194,51 +185,51 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="fixture-row" data-age="u13" data-club="pretoria bulls rfc wonderboom rfc" data-date-type="past">
                             <td><span class="badge">U13</span></td>
                             <td>8 Feb 2026</td>
                             <td>Pretoria Bulls RFC</td>
-                            <td style="font-weight: 700; color: #007DC5;">24 - 17</td>
+                            <td class="score-cell">24 - 17</td>
                             <td>Wonderboom RFC</td>
                             <td>Loftus Versfeld Mini Fields</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u15" data-club="centurion rfc irene rfc" data-date-type="past">
                             <td><span class="badge">U15</span></td>
                             <td>8 Feb 2026</td>
                             <td>Centurion RFC</td>
-                            <td style="font-weight: 700; color: #007DC5;">31 - 28</td>
+                            <td class="score-cell">31 - 28</td>
                             <td>Irene RFC</td>
                             <td>Centurion High School</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u11" data-club="menlo park rfc midrand rfc" data-date-type="past">
                             <td><span class="badge">U11</span></td>
                             <td>8 Feb 2026</td>
                             <td>Menlo Park RFC</td>
-                            <td style="font-weight: 700; color: #007DC5;">19 - 12</td>
+                            <td class="score-cell">19 - 12</td>
                             <td>Midrand RFC</td>
                             <td>Menlo Park Sports Grounds</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u17" data-club="wonderboom rfc centurion rfc" data-date-type="past">
                             <td><span class="badge">U17</span></td>
                             <td>9 Feb 2026</td>
                             <td>Wonderboom RFC</td>
-                            <td style="font-weight: 700; color: #007DC5;">35 - 21</td>
+                            <td class="score-cell">35 - 21</td>
                             <td>Centurion RFC</td>
                             <td>Wonderboom Stadium</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u9" data-club="irene rfc pretoria bulls rfc" data-date-type="past">
                             <td><span class="badge">U9</span></td>
                             <td>9 Feb 2026</td>
                             <td>Irene RFC</td>
-                            <td style="font-weight: 700; color: #007DC5;">14 - 14</td>
+                            <td class="score-cell">14 - 14</td>
                             <td>Pretoria Bulls RFC</td>
                             <td>Irene Country Club</td>
                         </tr>
-                        <tr>
+                        <tr class="fixture-row" data-age="u14" data-club="midrand rfc menlo park rfc" data-date-type="past">
                             <td><span class="badge">U14</span></td>
                             <td>9 Feb 2026</td>
                             <td>Midrand RFC</td>
-                            <td style="font-weight: 700; color: #007DC5;">22 - 26</td>
+                            <td class="score-cell">22 - 26</td>
                             <td>Menlo Park RFC</td>
                             <td>Midrand High School</td>
                         </tr>
@@ -302,8 +293,7 @@
             <p><a href="#privacy">Privacy Policy</a> | <a href="safeguarding.html">Safeguarding</a> | <a href="#terms">Terms of Use</a></p>
         </div>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle(
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
